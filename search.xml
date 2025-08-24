@@ -1,0 +1,1934 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Blender的后期合成</title>
+    <url>/2025/02/23/Blender%E7%9A%84%E5%90%8E%E6%9C%9F%E5%90%88%E6%88%90/</url>
+    <content><![CDATA[<p>当blender中的图片或动画渲染完成之后,就可以在blender中进行一些后期的处理.在此之前,需要进行一些基础设置</p>
+<p>在viewlayer设置自己需要渲染的视图,比如雾场,法向,漫反射,灯光等等.在设置之后才能渲染出需要的图层</p>
+<p>另外的就是渲染的输出设置:</p>
+<ul>
+<li>文件类型选择为openexr</li>
+<li>RGBA</li>
+<li>32bit更好,但16bit要更小一点,视情况而定</li>
+<li>其他的保持默认即可</li>
+</ul>
+<p>ctrl+shift+左键单击 可以对节点进行预览<br>ctrl+空格,可以将界面全屏</p>
+<p>在合成界面右上角有backdrop的选项,激活可直接在合成界面上进行预览</p>
+<p>后期处理流:</p>
+<ul>
+<li>辉光</li>
+<li>整体调色</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>CFD入门</title>
+    <url>/2024/10/28/CFD%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>RISC-V交叉编译工具链详细介绍</title>
+    <url>/2024/07/26/RISC-V%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7%E9%93%BE%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h3 id="RISC-V交叉编译工具链详细介绍"><a href="#RISC-V交叉编译工具链详细介绍" class="headerlink" title="RISC-V交叉编译工具链详细介绍"></a>RISC-V交叉编译工具链详细介绍</h3><h4 id="一、基本概念和特点"><a href="#一、基本概念和特点" class="headerlink" title="一、基本概念和特点"></a>一、基本概念和特点</h4><p>RISC-V交叉编译工具链是一套用于在一种架构（如x86）的计算机上编译针对另一种架构（如RISC-V）的程序的软件工具集合。它主要包括编译器（如riscv-gcc）、汇编器、链接器和调试器等组件，能够将高级语言（如C、C++）编写的源代码转换成RISC-V架构可以执行的机器码。</p>
+<p>RISC-V交叉编译工具链的特点主要包括：</p>
+<ol>
+<li><strong>跨平台编译能力</strong>：允许开发者在资源丰富的宿主机上编译针对资源受限的目标平台（如RISC-V嵌入式系统）的程序。</li>
+<li><strong>开源免费</strong>：RISC-V工具链大多基于开源项目，如GNU Compiler Collection（GCC），可以免费获取和使用。</li>
+<li><strong>灵活可定制</strong>：由于开源特性，开发者可以根据具体需求对工具链进行定制和优化。</li>
+<li><strong>生态系统丰富</strong>：随着RISC-V架构的普及，围绕其构建的工具链和生态系统日益完善，提供了丰富的支持资源。</li>
+</ol>
+<h4 id="二、在交叉编译过程中的作用和优势"><a href="#二、在交叉编译过程中的作用和优势" class="headerlink" title="二、在交叉编译过程中的作用和优势"></a>二、在交叉编译过程中的作用和优势</h4><p>RISC-V交叉编译工具链在交叉编译过程中发挥着核心作用，其具体作用和优势包括：</p>
+<ol>
+<li><strong>简化编译流程</strong>：隐藏了复杂的编译细节，如预处理、编译、汇编、链接等步骤，使得开发者只需关注源代码的编写。</li>
+<li><strong>提高编译效率</strong>：利用宿主机的强大资源，可以显著提高编译速度和效率，尤其适用于大型项目的编译。</li>
+<li><strong>支持多种RISC-V变种</strong>：RISC-V架构具有高度的可扩展性，交叉编译工具链能够支持多种不同的RISC-V变种，满足不同应用场景的需求。</li>
+<li><strong>便于调试和测试</strong>：工具链中通常包含调试器组件，使得开发者能够在宿主机上对目标平台的程序进行调试和测试，降低了开发难度。</li>
+</ol>
+<h4 id="三、适用场景和限制条件"><a href="#三、适用场景和限制条件" class="headerlink" title="三、适用场景和限制条件"></a>三、适用场景和限制条件</h4><p>RISC-V交叉编译工具链适用于多种场景，包括但不限于：</p>
+<ol>
+<li><strong>嵌入式系统开发</strong>：针对RISC-V架构的嵌入式系统进行软件开发和调试。</li>
+<li><strong>物联网设备开发</strong>：为基于RISC-V的物联网设备编写固件和应用程序。</li>
+<li><strong>学术研究</strong>：在高校和研究机构中，用于RISC-V架构的教学和科研工作。</li>
+</ol>
+<p>然而，RISC-V交叉编译工具链也存在一些限制条件，主要包括：</p>
+<ol>
+<li><strong>依赖宿主机环境</strong>：交叉编译需要在宿主机上进行，因此宿主机需要具备一定的硬件配置和软件环境支持。</li>
+<li><strong>工具链版本兼容性</strong>：不同版本的交叉编译工具链可能存在兼容性问题，需要开发者注意选择和更新。</li>
+<li><strong>特定平台优化</strong>：虽然工具链支持多种RISC-V变种，但针对特定平台的优化可能不够充分，需要开发者自行进行调优。</li>
+</ol>
+<h4 id="四、官方文档链接或相关资源"><a href="#四、官方文档链接或相关资源" class="headerlink" title="四、官方文档链接或相关资源"></a>四、官方文档链接或相关资源</h4><p>由于RISC-V交叉编译工具链涉及多个开源项目和组件，其官方文档和资源较为分散。以下是一些获取RISC-V交叉编译工具链官方文档和相关资源的建议途径：</p>
+<ol>
+<li><strong>RISC-V官方网站</strong>：RISC-V官方网站（<a href="https://riscv.org/">riscv.org</a>）提供了关于RISC-V架构和生态系统的详细介绍，可以从中找到关于交叉编译工具链的官方信息和资源链接。</li>
+<li><strong>GitHub仓库</strong>：许多RISC-V交叉编译工具链的组件都托管在GitHub等开源平台上，开发者可以通过访问这些仓库来获取最新的源代码、文档和更新信息。</li>
+<li><strong>社区论坛和博客</strong>：RISC-V社区中存在大量的论坛和博客资源，其中包含了丰富的交叉编译经验分享和技术讨论，是学习和解决问题的重要渠道。</li>
+</ol>
+<p>请注意，由于开源项目的动态性，上述链接和资源可能会随时间发生变化。因此，建议开发者在获取和使用RISC-V交叉编译工具链时，始终关注最新的官方信息和社区动态。</p>
+]]></content>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>activitywatch研究记录</title>
+    <url>/2025/05/02/activitywatch%E7%A0%94%E7%A9%B6%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近在研究 activitywatch 这款软件, 以下简称为 aw。它是用来追踪记录个人使用电脑的情况的开源软件, 在 github 上也有几千的 star. 在基础的层面上,<br>aw 支持追踪记录窗口和进程的使用情况, 但也可以自己扩展用来记录自己需要的信息, 如浏览器上的使用记录了, 在听音乐的情况的之类的.<br>开源免费, 还能自定义, 相较于收费的软件来说还是很划算的. 但使用的难度就上来了. 所以就打算把自己使用的感想了, 操作方法之类的记录下来, 万一那天忘了啥, 还可以回顾一下. 我用的是 windows 版本的.</p>
+<h3 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h3><p>首先, 软件本身是可以直接去 github 上下载的, 同时还有自己的官方网站和官网文档可以查看, 但都是英文的, 目前还没有见到中文的翻译版本.<br>软件在启动之后就自动最小化到托盘了, 就已经开始进行记录了. 软件在这方面分为了两部分, 一部分是用来收集数据的记录器, 正式名称叫 watcher, 另一部分就是用来存储和可视化这些追踪数据的 serve. 我们在托盘图标上右键, modules 选项下面的是所有存在的模块, 带有 watcher 字段的是存在的追踪器, 打对勾是正在使用的. 还是右键, 点击 open dashboard 可以打开统计窗口.<br>首先进去是欢迎界面, 这个可以在设置里面修改. 目前软件是全英的. 在左上角, 有 activity 点击进去就可以看到当前的一些追踪记录. 这些追踪记录可以在设置中通过关键词渲染出不同的颜色, 让数据更加好看. timeline 则是以时间流的方式显示数据. 余下的那个 stopwatch 就是用来在指定情况下停止追踪记录使用的</p>
+<h3 id="watcher-的基础使用"><a href="#watcher-的基础使用" class="headerlink" title="watcher 的基础使用"></a>watcher 的基础使用</h3><p>使用 aw 这个软件主要目的还是追踪记录自己, 但不同的人有不同的记录的需求, 因此可以使用不同的 watcher 在满足自己的需求.<br>自带的 watcher 有三个, 分别是:</p>
+<ol>
+<li><a href="https://github.com/ActivityWatch/aw-watcher-afk">aw-watcher-afk</a> : 用来追踪使用者是不是在使用电脑, 默认情况下如果键盘和鼠标有三分钟没有动过, 就会记录人已经不在电脑旁边了</li>
+<li><a href="https://github.com/ActivityWatch/aw-watcher-window">aw-watcher-window</a>: 记录了当前那个窗口在被使用, 标题是什么, 如果是浏览器的话还会记录 url</li>
+<li><a href="https://github.com/ActivityWatch/aw-watcher-input">aw-watcher-input</a> - 跟踪按键次数和鼠标移动的距离。</li>
+</ol>
+<p>除了这些自带的, 有时候是我们也会想追踪一些其他的数据, 这就需要添加一些自定义的 watcher, 也不一定需要自己写, 在 aw 的官网上就推荐了一些第三方的 watcher.<br>在 github 上找到需要的 watcher 之后下载下来, 解压为文件夹. 到 aw 的安装目录, 可以看到与原生的 watcher 同名的文件夹, 直接复制过来, 和原生的 watcher 同名的文件夹放在一起就可以了. 然后重启一下 aw ,就可以再 modules 下面看到新装的 watcher 了, 单击启动使用.<br>如果想要让 aw 启动的时候就自动启动 watcher 就需要到 <code>C:\Users\~\AppData\Local\activitywatch\activitywatch\aw-qt</code> 下面, 有一个 <code>aw-qt. toml</code> 文件, 在 <code>autostart_modules = [&quot;aw-server&quot;, &quot;aw-watcher-afk&quot;, &quot;aw-watcher-window&quot;] </code> 中添加自己希望软件启动后就自动启动的 watcher 的名字就可以了</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在记录的过程中, 我也发现了一些问题, 一些是软件的, 一些是记录的<br>在我的日常使用过程中, 我在多个用途上都使用有浏览器, 因此在分类中很难对浏览器进行分类, 目前的一个想法是把浏览器分开, 一个浏览器负责工作上的内容, 另一个就用来学习.<br>在对网页的进行步的细分记录中也出来的这个问题, 同时给视频网站, 我有时用来学习, 又是用来娱乐, 很难通过关键词来进行区分</p>
+<h2 id="activitywatch的各组件"><a href="#activitywatch的各组件" class="headerlink" title="## activitywatch的各组件"></a>## activitywatch的各组件</h2><p>aw大致可以分为三部分, watcher, serve</p>
+<p>之前介绍的watcher是用来收集信息的部分，自然也就有汇集和存储信息的部分aw-serve,同时还有将信息可视化出来的面板部分aw-webui</p>
+<h3 id="如何做一个自定义的watcher"><a href="#如何做一个自定义的watcher" class="headerlink" title="如何做一个自定义的watcher"></a>如何做一个自定义的watcher</h3><p>每个人有自己不同的需求，往往有时候在网上是找不到适合自己的watcher的，这时候就要自己写了。</p>
+<p>aw支持python和rust用来开发wa,我习惯用python就用python来进行了</p>
+<p>官方的网站虽然提到了一些watcher的开发</p>
+<p>给了一个极其简易的watcher，但也就仅止于此了，至于如何进行测试了，应该怎么做才能让自己写的代码运行起来，代码不全能不能行之类的就很少提及</p>
+<p>所幸的是，有还有api文档的存在以及其他人的文件可以参考</p>
+<p>首先，如果要开发watcher建议不要直接用官方给的例子，而是自定义一个watcher的类</p>
+<p>根据我参考他人的开源文件得来的经验，目录一般情况下是如下的排布</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">src/</span><br><span class="line">    config</span><br><span class="line">    settings</span><br><span class="line">    watcher</span><br><span class="line">    __init__</span><br><span class="line">visualision</span><br><span class="line">test/</span><br><span class="line">    watcher_test</span><br><span class="line">.gitignore</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>其中src中的watcher是核心，里面需要引用aw中的event以及clinet两个类</p>
+<p>watcher收集来的数据要封装在一个event中，然后发送到serve去。在serve中用于存储数据的结构叫bucket。一般来说，一个watcher对应一个bucket。</p>
+<p>我们需要初始化一个cliner类，通过cliner通过的方法来在serve中创建，检索修改bucket，并向其中发送自己存储到的数据</p>
+<p>我们可以自定义watcher类用来向serve发送收集到的数据，而收集数据看情况是否需要自定义类来进行处理</p>
+<h2 id="actitywatch的-API"><a href="#actitywatch的-API" class="headerlink" title="actitywatch的 API"></a>actitywatch的 API</h2><h3 id="client"><a href="#client" class="headerlink" title="client"></a>client</h3><p>client 中有两个类 <code>ActivityWatchClient</code> 以及 <code>RequestQueue</code> .<br><code>ActivityWatchClient</code> 是一个客户端类, 用来和 serve 端进行通信, 创建修改bucket 以及 event. <code>RequestQueue</code> 是一个服务类, 用于 client 于 serve 之间暂时连接不上时存储发送的 event</p>
+<h4 id="ActivityWatchClient"><a href="#ActivityWatchClient" class="headerlink" title="ActivityWatchClient"></a>ActivityWatchClient</h4><p><code>ActivityWatchClient</code> 是对 aw-server 的REST API 的一个简易的包装, 其实质上还是使用的 requests 库通过本地的端口进行通信. 因此, 在初始化的时候我们可以有选择性的向里面传入 host, port, 以及 protocol, 用来对其进行修改<br>aw-c 的成员有以下几个：</p>
+<ul>
+<li>testing: 用于进行测试</li>
+<li>client_name</li>
+<li>client_hostname</li>
+<li>server_address</li>
+<li>instance: 是一个SingleInstance 类</li>
+<li>request_queue</li>
+<li>last_heartbeat</li>
+</ul>
+<p>与 event 有关的方法</p>
+<ul>
+<li>get_event</li>
+<li>get_events</li>
+<li>insert_event</li>
+<li>insert_events</li>
+<li>delete_event</li>
+<li>get_eventcount</li>
+<li>heartbeat</li>
+</ul>
+<p>与 bucket 有关的方法 </p>
+<ul>
+<li>get_buckets</li>
+<li>create_bucket</li>
+<li>delete_bucket</li>
+<li>setup_bucket</li>
+<li>export_bucket</li>
+<li>import_bucket</li>
+<li>export_all</li>
+</ul>
+<p>与设置有关的方法</p>
+<ul>
+<li>get_setting</li>
+<li>set_setting</li>
+</ul>
+<p>与链接有关的方法:</p>
+<ul>
+<li>connect</li>
+<li>disconnect</li>
+<li>wait_for_start</li>
+</ul>
+<h4 id="RequestQueue"><a href="#RequestQueue" class="headerlink" title="RequestQueue"></a>RequestQueue</h4><p>  <code>RequestQueue</code> 类继承自 <code>threading.Thread</code> ,用于异步发送heartbeats<br>其成员有:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">+ self.client</span><br><span class="line">+ self.connected</span><br><span class="line">+ self._stop_event</span><br><span class="line">+ self._registered_buckets</span><br><span class="line">+ self._attempt_reconnect_interval</span><br><span class="line">+ self._persistqueue</span><br><span class="line">+ self._current</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>软件配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blender中的点线面编辑</title>
+    <url>/2025/03/15/blender%E4%B8%AD%E7%9A%84%E7%82%B9%E7%BA%BF%E9%9D%A2%E7%BC%96%E8%BE%91/</url>
+    <content><![CDATA[<p>blender 中可以直接添加到界面上基础的物体，如平面，正方体，球，圆柱等。但对于建筑常见的不规则形状就不能直接生成了, 需要进入编辑模式去对点线面进行编辑</p>
+<p>我们常用的有哪些编辑处理呢?</p>
+<ul>
+<li>在面上加一个点</li>
+<li>在面上加一条边</li>
+<li>通过对点的挤出形成新的面</li>
+<li>通过对边的挤出形成新的面</li>
+</ul>
+<p>倒角:crtl+b</p>
+<h3 id="快捷方式"><a href="#快捷方式" class="headerlink" title="快捷方式:"></a>快捷方式:</h3><p>f: 在选定顶点之后将其闭合成面</p>
+]]></content>
+      <tags>
+        <tag>blender</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c++入门</title>
+    <url>/2025/02/28/c++%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h3 id="c-的基本类型"><a href="#c-的基本类型" class="headerlink" title="c++的基本类型:"></a>c++的基本类型:</h3><ul>
+<li>整数</li>
+<li>浮点数</li>
+<li>bool</li>
+<li>std::byte</li>
+<li>size_t</li>
+<li>void</li>
+<li>char</li>
+<li>数组</li>
+<li>自定义类型<ul>
+<li>枚举:enum class</li>
+<li>类: struct</li>
+<li>联合体: union</li>
+</ul>
+</li>
+<li>引用类型：<ul>
+<li>指针：*</li>
+<li>引用：&amp;</li>
+</ul>
+</li>
+</ul>
+<p>访问控制标签：</p>
+<ul>
+<li>private：私有</li>
+<li>public：公开</li>
+</ul>
+<p>所有的struct成员默认条件下是公有的<br>使用class代替struct的情况下是私有的</p>
+<p>构造函数时具有特殊声明的的特殊方法。其声明不需要返回类型，名称与类的名称一致<br>析构函数在对象被销毁前调用。其名称与类名一致，但与构造函数不同，其前面加有~号</p>
+<p>在 C 和 C++ 中，<code>union</code> 和 <code>struct</code> 的核心区别如下：</p>
+<hr>
+<h3 id="1-内存分配方式"><a href="#1-内存分配方式" class="headerlink" title="1. 内存分配方式"></a><strong>1. 内存分配方式</strong></h3><ul>
+<li><p><strong>struct</strong>  </p>
+<ul>
+<li>C&#x2F;C++ 中所有成员占用独立内存空间，总大小为各成员大小之和（含内存对齐）。  </li>
+<li>例：  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Example</span> &#123;</span>  </span><br><span class="line">    <span class="type">int</span> a;    <span class="comment">// 4 字节  </span></span><br><span class="line">    <span class="type">char</span> b;   <span class="comment">// 1 字节  </span></span><br><span class="line">&#125;;  </span><br><span class="line"><span class="comment">// 总大小可能为 8 字节（因内存对齐）  </span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>union</strong>  </p>
+<ul>
+<li>所有成员共享同一块内存，大小为最大成员的大小。  </li>
+<li>例：  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Example</span> &#123;</span>  </span><br><span class="line">    <span class="type">int</span> a;    <span class="comment">// 4 字节  </span></span><br><span class="line">    <span class="type">char</span> b;   <span class="comment">// 1 字节  </span></span><br><span class="line">&#125;;  </span><br><span class="line"><span class="comment">// 总大小为 4 字节  </span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a><strong>2. 使用场景</strong></h3><ul>
+<li><p><strong>struct</strong>  </p>
+<ul>
+<li>组合逻辑相关的多种数据类型（如坐标 <code>&#123;x, y, z&#125;</code>）。  </li>
+<li>C++ 中可替代类（默认 <code>public</code> 访问权限）。</li>
+</ul>
+</li>
+<li><p><strong>union</strong>  </p>
+<ul>
+<li>需节省内存，且同一时间只使用一个成员（如协议数据解析）。  </li>
+<li>类型转换（利用内存共享特性）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const用于确保变量的值不会被修改。可以作用于：</p>
+<ul>
+<li>输入参数</li>
+<li>方法</li>
+<li>变量</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 输入参数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">a</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* b)</span></span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">a</span><span class="params">(<span class="type">int</span> b)</span> <span class="type">const</span> </span>&#123;&#125;</span><br><span class="line"><span class="comment">// 变量</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> a;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>对象的存储周期从构造函数开始,从析构函数结束</p>
+<ul>
+<li>自动存储周期</li>
+<li>静态存储周期</li>
+<li>线程局部存储期</li>
+<li>动态存储期</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>gimp中的基础操作</title>
+    <url>/2024/05/14/gimp%E4%B8%AD%E7%9A%84%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="选区相关"><a href="#选区相关" class="headerlink" title="选区相关"></a>选区相关</h2><h3 id="建立选区的方法"><a href="#建立选区的方法" class="headerlink" title="建立选区的方法"></a>建立选区的方法</h3><h3 id="选区操作"><a href="#选区操作" class="headerlink" title="选区操作"></a>选区操作</h3><h3 id="应用选区"><a href="#应用选区" class="headerlink" title="应用选区"></a>应用选区</h3>]]></content>
+      <tags>
+        <tag>软件学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>heatmap-clendar使用记录</title>
+    <url>/2023/12/16/heatmap-clendar%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><p>heatmap-clendar插件是一款用于将笔记数据以热力图的形式可视化的插件。如果要使用该插件，要具备以下插件：</p>
+<ul>
+<li>heatmap-clendar</li>
+<li>dataview</li>
+</ul>
+<h3 id="热力图的形式与阅读"><a href="#热力图的形式与阅读" class="headerlink" title="热力图的形式与阅读"></a>热力图的形式与阅读</h3><p>热力图的形式<br>![[Pasted image 20231216223443.png]]<br>热力图显示的是一整年的笔记量，列代表的是月份，行代表的是星期，从左至右，从上至下进行阅读<br>![[Pasted image 20231216223657.png]]</p>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><h3 id="基础应用"><a href="#基础应用" class="headerlink" title="基础应用"></a>基础应用</h3><p>使用该插件统计需要两部分：</p>
+<ol>
+<li>显示热力图的区域</li>
+<li>需要进行可视化的笔记</li>
+</ol>
+<p>我们要对笔记进行处理,就是要添加一些用来进行筛选以及判定强度的元信息,是在<code>front-matter</code>中设置的.在以下的例子中,主要使用的是一个名为<code>exercise</code>的信息</p>
+<p>该插件使用的是<code>dataviewjs</code>的语法,进行可视化使用的函数是<code>renderHeatmapCalendar(this.container, calendarData)</code><br>其中<code>this.container</code>是固定的无需关心,我们需要构造<code>calendarData</code>参数</p>
+<p>该参数的定义如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> calendarData = &#123; <span class="attr">year</span>: <span class="number">2022</span>, <span class="comment">// (optional)</span></span><br><span class="line">					  <span class="attr">showCurrentDayBorder</span>: <span class="literal">true</span>, <span class="comment">// (optional)</span></span><br><span class="line">					  <span class="attr">defaultEntryIntensity</span>: <span class="number">4</span>, <span class="comment">// (optional)</span></span><br><span class="line">					  <span class="attr">intensityScaleStart</span>: <span class="number">10</span>, <span class="comment">// (optional)</span></span><br><span class="line">					  <span class="attr">intensityScaleEnd</span>: <span class="number">100</span>,<span class="comment">// (optional)</span></span><br><span class="line">					  <span class="attr">entries</span>: [], <span class="comment">// (required) </span></span><br><span class="line">					  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>其中我们最需要关注的是<code>entries</code>,这是一个必须的参数,我们要将主要数据加入其中</p>
+<p>然后是进行选择的代码</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> page <span class="keyword">of</span> dv.<span class="title function_">pages</span>(<span class="string">&#x27;&quot;daily notes&quot;&#x27;</span>).<span class="title function_">where</span>(<span class="function"><span class="params">p</span> =&gt;</span>p.<span class="property">exercise</span>)) &#123; </span><br><span class="line">	calendarData.<span class="property">entries</span>.<span class="title function_">push</span>(&#123; </span><br><span class="line">								<span class="attr">date</span>: page.<span class="property">file</span>.<span class="property">name</span>, </span><br><span class="line">								<span class="attr">intensity</span>: page.<span class="property">exercise</span>,</span><br><span class="line">								<span class="attr">content</span>: <span class="string">&quot;🏋️&quot;</span>, <span class="comment">// (optional)</span></span><br><span class="line">								<span class="attr">color</span>: <span class="string">&quot;orange&quot;</span>,<span class="comment">// (optional)</span></span><br><span class="line">								&#125;) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这串代码做的是通过循环不断地向<code>entries参数</code>中加入一个字典</p>
+<p><code>dv.pages(&#39;&quot;daily notes&quot;&#39;).where(p =&gt;p.exercise)</code>对全部笔记进行了选择,其选择方式有全部文件,标签,文件夹,标签或文件夹等等选法,具体如下:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">dv.<span class="title function_">pages</span>()  <span class="comment">//选择全部文件</span></span><br><span class="line">dv.<span class="title function_">pages</span>(<span class="string">&quot;#books&quot;</span>) <span class="comment">// 选中带有books标签的文件 </span></span><br><span class="line">dv.<span class="title function_">pages</span>(<span class="string">&#x27;&quot;folder&quot;&#x27;</span>) <span class="comment">//选择folder文件夹下的文件</span></span><br><span class="line">dv.<span class="title function_">pages</span>(<span class="string">&quot;#yes or -#no&quot;</span>)<span class="comment">//选择有yes标签或者没有no标签的文件</span></span><br><span class="line">dv.<span class="title function_">pages</span>(<span class="string">&#x27;&quot;folder&quot; or #tag&#x27;</span>) <span class="comment">//选择有tag标签的文件或者folder文件夹下面的文件</span></span><br></pre></td></tr></table></figure>
+
+<p>后面的<code>where(p =&gt;p.exercise)</code>进一步筛选带<code>exercise</code>元信息的文件,这个元信息在后续可视化时需要用到,如果没有的话可能会报错,而且这个信息是由自己定义的,不一定非要叫这个名字</p>
+<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><p>在筛选完成后返的是&#x3D;&#x3D;所有符合要求的页面的数组&#x3D;&#x3D;,然后把每个页面拿出来进行数据统计</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">date</span>: page.<span class="property">file</span>.<span class="property">name</span>, <span class="comment">//格式必须是YYYY-MM-DD</span></span><br><span class="line"><span class="attr">intensity</span>: page.<span class="property">exercise</span>, <span class="comment">//数字</span></span><br></pre></td></tr></table></figure>
+<p>收集的的信息中主要的就这两条,<code>data</code>是该笔记的一个时间,这个时间是要在热力图中显示出来的。<br>上述的例子中，筛选出来的日记，日记文件在生成时的名称就是日记创建当天的时间,因此可以直接用文件的名字，如果不是这个形式的话就要使用文件的创建时间或者最后的修改时间之类的作为数据</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">file.<span class="property">mday</span> <span class="comment">//最后修改日期  output:1694620800000</span></span><br><span class="line">file.<span class="property">cday</span> <span class="comment">//创建时间      output:1702569600000</span></span><br></pre></td></tr></table></figure>
+
+<p>这几个语句返回的是据1997年以来的秒数，直接使用格式是错误的,要对其处理，使其转变为&#x3D;&#x3D;YYYY-MM-DD&#x3D;&#x3D;的格式</p>
+<p>主要就是把年月日分别提取出来，在拼合成对应的格式</p>
+<p>提取年月日</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> month = page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">month</span> &lt;= <span class="number">10</span> ? <span class="string">&quot;0&quot;</span>+page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">month</span> : page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">month</span>;</span><br><span class="line"><span class="keyword">let</span> day = page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">day</span> &lt;= <span class="number">10</span> ? <span class="string">&quot;0&quot;</span>+page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">day</span> : page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">day</span>;</span><br><span class="line"><span class="keyword">let</span> date = page.<span class="property">file</span>.<span class="property">cday</span>.<span class="property">year</span>+<span class="string">&quot;-&quot;</span>+month+<span class="string">&quot;-&quot;</span>+day</span><br></pre></td></tr></table></figure>
+
+<p>提取使用的<code>page.file.cday.month</code>,但返回的月份中一到九月是个位数的形式,要人工在前面补0,对于天数也是如此,个位数的要在前面补0,然后拼接起来</p>
+<h3 id="intensity"><a href="#intensity" class="headerlink" title="intensity"></a>intensity</h3><p>在<code>entries</code>中<code>intensity</code>也是必须的,其作用是在可视化中控制显示颜色的强度,颜色越深说明工作量越大<br>需要的输入类型是数字,一般情况下可以是阅读时间,笔记的字数等等</p>
+]]></content>
+      <tags>
+        <tag>obsidian插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blende中的照明灯光</title>
+    <url>/2025/02/28/blende%E4%B8%AD%E7%9A%84%E7%85%A7%E6%98%8E%E7%81%AF%E5%85%89/</url>
+    <content><![CDATA[<p>分类:</p>
+<ol>
+<li>HDRI高范围成像</li>
+<li>普通灯光</li>
+<li>日光</li>
+<li>自发光</li>
+<li>IES</li>
+<li>Gobo纹理光</li>
+</ol>
+<h3 id="HDRI"><a href="#HDRI" class="headerlink" title="HDRI"></a>HDRI</h3><p>文件类型分为hdr和exr<br>仅用于环境照明的话就使用hdr<br>要用于合成的话使用exr</p>
+]]></content>
+      <tags>
+        <tag>blender</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ladybug分析</title>
+    <url>/2025/05/06/ladybug%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>建筑设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript学习笔记</title>
+    <url>/2025/03/03/javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>原始类<ul>
+<li>num</li>
+<li>bool</li>
+<li>string</li>
+<li>null</li>
+<li>undefine</li>
+<li>symbol</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>object</li>
+</ul>
+</li>
+</ul>
+<p>typeof操作符用于判断变量属于哪一个原始类型<br>instanceof操作符用于判断哪一种对象</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>nasm-cpt笔记</title>
+    <url>/2025/01/23/nasm-cpt%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="第1章-综合训练的理论基础"><a href="#第1章-综合训练的理论基础" class="headerlink" title="第1章:综合训练的理论基础"></a>第1章:综合训练的理论基础</h2><h3 id="OPT模型"><a href="#OPT模型" class="headerlink" title="OPT模型"></a>OPT模型</h3><p>opt模型将训练分为了三个层级：稳定，力量，爆发力.，每个层级都包含不同的训练阶段</p>
+<ul>
+<li>稳定性</li>
+<li>力量<ul>
+<li>力量耐力</li>
+<li>肌肉肥大</li>
+<li>最大力量</li>
+</ul>
+</li>
+<li>爆发力</li>
+</ul>
+<p>![[Pasted image 20250304013251.png|400]]</p>
+<h3 id="稳定性层级-第一层级"><a href="#稳定性层级-第一层级" class="headerlink" title="稳定性层级:第一层级"></a>稳定性层级:第一层级</h3><p>稳定性是基础,必须先于力量与爆发力的训练</p>
+<p>目标：</p>
+<ul>
+<li>肌肉耐力</li>
+<li>稳定性</li>
+<li>神经肌肉效率(协调性)</li>
+</ul>
+<p>训练策略:</p>
+<ul>
+<li>在不稳定但是可控的环境中训练</li>
+<li>低负荷,多重复</li>
+</ul>
+<p>该训练层级的进阶基于<strong>本体感受</strong></p>
+<h3 id="力量层级-第二层级"><a href="#力量层级-第二层级" class="headerlink" title="力量层级: 第二层级"></a>力量层级: 第二层级</h3><h4 id="第一阶段：力量耐力"><a href="#第一阶段：力量耐力" class="headerlink" title="第一阶段：力量耐力"></a>第一阶段：力量耐力</h4><p>目标：</p>
+<ul>
+<li>提高稳定性的同时提高原动肌的力量</li>
+<li>提高整体训练量</li>
+<li>增强关节稳定性</li>
+<li>增加廋肉量</li>
+</ul>
+<p>训练策略:</p>
+<ul>
+<li>中等负荷和中等重复次数</li>
+<li>超级组；在训练计划的阻抗练习中，每个部位进行一个传统力量练习和稳定性练习</li>
+</ul>
+<h4 id="第二阶段：肌肉肥大"><a href="#第二阶段：肌肉肥大" class="headerlink" title="第二阶段：肌肉肥大"></a>第二阶段：肌肉肥大</h4><p>目标：</p>
+<ul>
+<li>增加肌肉体积</li>
+</ul>
+<p>训练策略:</p>
+<ul>
+<li>大训练量，中等至高负荷，中等或低重复次数 (6-12)</li>
+</ul>
+<h4 id="第三阶段-最大力量"><a href="#第三阶段-最大力量" class="headerlink" title="第三阶段: 最大力量"></a>第三阶段: 最大力量</h4><p>目标: </p>
+<ul>
+<li>增强运动单位的募集</li>
+<li>增强运动单位的募集频率</li>
+<li>提高峰值力</li>
+</ul>
+<p>训练策略：</p>
+<ul>
+<li>高负荷，低重复次数（1-5），更长的休息时间</li>
+</ul>
+<h3 id="爆发力层级"><a href="#爆发力层级" class="headerlink" title="爆发力层级"></a>爆发力层级</h3><h4 id="第一阶段-爆发力训练"><a href="#第一阶段-爆发力训练" class="headerlink" title="第一阶段: 爆发力训练"></a>第一阶段: 爆发力训练</h4><p>目标:</p>
+<ul>
+<li>增强神经肌肉效率</li>
+<li>增强原动肌力量</li>
+<li>提高力的产生速率</li>
+</ul>
+<p>训练策略:</p>
+<ul>
+<li>超级组: 在训练计划的阻抗部分中, 每个身体部位进行一个传统力量练习和一个爆发力练习</li>
+<li>可控范围内尽可能快的进行所有爆发力练习</li>
+</ul>
+<h2 id="运动系统"><a href="#运动系统" class="headerlink" title="运动系统"></a>运动系统</h2><p>人体动作是通过肌肉, 骨骼, 神经三个系统的支持下进行的</p>
+<p>中枢神经系统:CNS<br>周围神经系统:PNS<br>![[Pasted image 20250305013831.png|500]]</p>
+<p>神经元可以分为:</p>
+<ul>
+<li>感受神经元</li>
+<li>中间神经元</li>
+<li>运动神经元</li>
+</ul>
+<h2 id="第17章-营养"><a href="#第17章-营养" class="headerlink" title="第17章:营养"></a>第17章:营养</h2><p>评估蛋白质的术语:</p>
+<ul>
+<li>蛋白质效率比(PEER)</li>
+<li>蛋白质净利用值(NPU)</li>
+<li>生物价值(BV)</li>
+</ul>
+<p>本质上,BV是衡量蛋白质质量的指标,也是衡量其满足人体必需氨基酸需求程度的指标</p>
+<p>蛋白质的推荐摄入量(每天每千克体重蛋白质的克数):</p>
+<ul>
+<li>久坐不动:0.8</li>
+<li>力量项目:1.2-1.7</li>
+<li>耐力项目:1.2-1.4<br>过多的摄入蛋白质并不好,可能导致糖原储存减少,尿素增多肾脏压力大,可能的脱水</li>
+</ul>
+<p>碳水化合物一般分为,简单糖,淀粉,纤维.<br>升糖指数(GI):指数低的来源更加优质<br>![[Pasted image 20250123235646.png]]</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>nasm-cscs</title>
+    <url>/2025/01/27/nasm-cscs/</url>
+    <content><![CDATA[<p>中轴骨包括头骨 （ 颅骨 ）、 脊柱 （ 从颈椎Cl 节到尾骨 ）、 肋骨和胸骨。 附肢骨包括肩带骨 （ 左右肩脾骨和锁骨 ）， 手臂、 手腕和手的骨头 （ 左右胧骨 、 挠骨、 尺骨、 腕骨 、 掌骨和指骨 ）， 骨盆 （ 左右鹘骨 ）， 以及腿、 脚踝和足的骨头 （ 左右股骨、 骸骨、 胫骨、 排骨、 附骨 、 距骨和趾骨 ）<br>骨与骨之间的连结叫关节。<br>纤维关节 （ 例如颅骨的骨缝 ） 几乎不能活动<br>软骨关节 （ 例如椎间盘 ） 的活动范围有限<br>滑膜关节 （ 例如肘关节和膝关节 ） 的活动范围相当大。<br>运动和锻炼的动作主要围绕着滑膜关节发生<br>组成关节的骨的末端覆盖着光滑的透明软骨 ， 并且整个关节被包裹在充满滑液的关节囊中。 滑膜关节通常还有韧带和关节内软骨作为辅助结构<br>肌肉可以分为$I型(慢肌纤维),IIa型(快肌纤维),IIx型(快肌纤维)$<br>与$IIx型$相比,$IIa型$的有氧氧化能力更强,更加的抗疲劳</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>python的UV使用</title>
+    <url>/2025/07/15/python%E7%9A%84UV%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用了一段时间的 miniconda 之后, 最近听说 uv 听说的就试一试, 一下是我的一些记录<br>uv 是使用 rust 编写的一款 python 环境管理工具, 和 conda 差不多. 不同的是 conda 下载之后自带一个 python, 而 uv 则需要在下载 python 之后使用 pip 下载.</p>
+<h2 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h2><p>下载的方法也是挺简单的 <code>pip install uv</code> ,等待下载完成就可以使用<br>使用 uv 是以项目为单位进行的,<br>首先需要初始化一个项目 , 使用 <code>uv init [项目名称]</code> ,uv 会自动创建虚拟环境和基本的配置文件.<br>其中比较核心的是 <code>pyproject. toml</code> 文件, 里面记录了该项目使用的 python 版本以及依赖<br>使用 <code>uv run [脚本名称]</code> 来运行脚本<br>使用 <code>uv add [包名]</code> 来为项目添加需要的 python 包.<br>使用 <code>uv tree</code> 来显示项目中所有存在的包<br>使用 <code>uv sync</code> 来更新 <code>pyproject. toml</code> 文件</p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>uv 使用 add 添加包默认是从官网上下载的, 这样速度就很慢, 所以需要换成国内源. 有好几种方法</p>
+<h4 id="第一种-更改系统变量"><a href="#第一种-更改系统变量" class="headerlink" title="第一种: 更改系统变量"></a>第一种: 更改系统变量</h4><p>在系统变量里添加变量名为 <code>UV_DEFAULT_INDEX</code> ,变量值为 <code>https://pypi.tuna.tsinghua.edu.cn/simple</code> 的变量</p>
+<h4 id="第二种-配置-uv-toml-文件"><a href="#第二种-配置-uv-toml-文件" class="headerlink" title="第二种: 配置 uv.toml 文件"></a>第二种: 配置 uv.toml 文件</h4><p><strong>文件路径为</strong> <code>%APPDATA%\uv\uv.toml</code><br>添加下述信息:</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">[[index]]</span><br><span class="line">url = &quot;https://pypi.tuna.tsinghua.edu.cn/simple&quot;</span><br><span class="line">default = true</span><br></pre></td></tr></table></figure>
+
+<h4 id="第三种-临时使用"><a href="#第三种-临时使用" class="headerlink" title="第三种: 临时使用"></a>第三种: 临时使用</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">uv add [包名] --default-index https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+
+<h3 id="python-配置"><a href="#python-配置" class="headerlink" title="python 配置"></a>python 配置</h3><p>uv 可以设置不同的项目使用不同的 python 版本. 在默认情况下<br>使用 <code>uv python list</code> 可以列出电脑上已经安装的和可以安装的 python 版本<br>使用 <code>uv python install [版本]</code> 下载不同版本的 python</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>二十一世纪资本论</title>
+    <url>/2024/05/20/%E4%BA%8C%E5%8D%81%E4%B8%80%E4%B8%96%E7%BA%AA%E8%B5%84%E6%9C%AC%E8%AE%BA/</url>
+    <content><![CDATA[<p>主题:</p>
+<ol>
+<li>资本收益率显著高于经济增长率是一切不平等的根源</li>
+<li>资本收益率从长期来看总是高于国民收入的增长率</li>
+</ol>
+<p>️<br>️</p>
+]]></content>
+      <tags>
+        <tag>经济</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>住宅灯光设计</title>
+    <url>/2025/03/30/%E4%BD%8F%E5%AE%85%E7%81%AF%E5%85%89%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>建筑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用pyaudio进行录音</title>
+    <url>/2024/03/09/%E4%BD%BF%E7%94%A8pyaudio%E8%BF%9B%E8%A1%8C%E5%BD%95%E9%9F%B3/</url>
+    <content><![CDATA[<h2 id="数字音频的特点"><a href="#数字音频的特点" class="headerlink" title="数字音频的特点"></a>数字音频的特点</h2><h3 id="采样率"><a href="#采样率" class="headerlink" title="采样率"></a>采样率</h3><h3 id="采样精度"><a href="#采样精度" class="headerlink" title="采样精度"></a>采样精度</h3>]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机,音频处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人工智能</title>
+    <url>/2025/02/24/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</url>
+    <content><![CDATA[<p>一个合格的人工智能要有以下能力:</p>
+<ul>
+<li>使用语言与人进行互动:自然语言处理</li>
+<li>存储收集到信息:知识表示</li>
+<li>运用存储的信息回答问题,并推出新结论:自动推理</li>
+<li>适应新情况并检测和预测新模式:机器学习</li>
+<li>感知物体:计算机视觉</li>
+<li>操作和移动对象:机器人学</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>使用wsl编译RISC-V交叉编译工具链</title>
+    <url>/2024/08/01/%E4%BD%BF%E7%94%A8wsl%E7%BC%96%E8%AF%91RISC-V%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7%E9%93%BE/</url>
+    <content><![CDATA[<p>使用WSL（Windows Subsystem for Linux）编译RISC-V交叉编译工具链是一个相对直接的过程，但需要注意几个关键步骤以确保编译过程符合RISC-V的规范和标准。以下是一个详细的指南：</p>
+<h3 id="一、WSL和RISC-V交叉编译工具链的基本流程"><a href="#一、WSL和RISC-V交叉编译工具链的基本流程" class="headerlink" title="一、WSL和RISC-V交叉编译工具链的基本流程"></a>一、WSL和RISC-V交叉编译工具链的基本流程</h3><ol>
+<li><p><strong>安装WSL</strong></p>
+<ul>
+<li>打开Windows PowerShell（管理员模式）。</li>
+<li>输入命令 <code>wsl --install</code> 并按回车键。注意，根据Windows版本，可能需要指定具体的Linux发行版，如 <code>wsl --install -d Ubuntu</code>。</li>
+<li>重启计算机以完成安装。</li>
+<li>设置Linux用户和密码。</li>
+</ul>
+</li>
+<li><p><strong>更新Linux子系统</strong></p>
+<ul>
+<li>打开WSL终端。</li>
+<li>更新包列表和升级已安装的包：<code>sudo apt update &amp;&amp; sudo apt upgrade</code>。</li>
+</ul>
+</li>
+<li><p><strong>安装必要的依赖项</strong></p>
+<ul>
+<li><p>RISC-V交叉编译工具链的编译需要一系列开发工具和库。使用以下命令安装：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码<span class="built_in">sudo</span> apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>下载RISC-V交叉编译工具链源代码</strong></p>
+<ul>
+<li><p>使用git从GitHub克隆RISC-V GNU Toolchain的源代码：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码git <span class="built_in">clone</span> --recursive https://github.com/riscv/riscv-gnu-toolchain.git</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>编译RISC-V交叉编译工具链</strong></p>
+<ul>
+<li>在源代码目录中创建一个构建目录，并在该目录中执行配置和编译命令。</li>
+</ul>
+</li>
+</ol>
+<h3 id="二、使用WSL命令行工具进行交叉编译"><a href="#二、使用WSL命令行工具进行交叉编译" class="headerlink" title="二、使用WSL命令行工具进行交叉编译"></a>二、使用WSL命令行工具进行交叉编译</h3><ol>
+<li><p><strong>配置构建环境</strong></p>
+<ul>
+<li><p>进入构建目录（例如，在riscv-gnu-toolchain目录下创建并进入build目录）：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码<span class="built_in">mkdir</span> build &amp;&amp; <span class="built_in">cd</span> build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行配置脚本，指定安装前缀和其他选项（如架构和ABI）：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码../configure --prefix=/opt/riscv --with-arch=rv64imac --with-abi=lp64</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：上述命令中的<code>--with-arch</code>和<code>--with-abi</code>选项应根据你的具体需求进行调整。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>编译工具链</strong></p>
+<ul>
+<li><p>使用<code>make</code>命令开始编译过程。这可能需要一些时间，具体取决于你的系统性能。</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码make</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>安装工具链</strong></p>
+<ul>
+<li><p>编译完成后，使用<code>make install</code>命令将工具链安装到指定的前缀目录下。</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码<span class="built_in">sudo</span> make install</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="三、确保编译过程符合RISC-V的规范和标准"><a href="#三、确保编译过程符合RISC-V的规范和标准" class="headerlink" title="三、确保编译过程符合RISC-V的规范和标准"></a>三、确保编译过程符合RISC-V的规范和标准</h3><ul>
+<li>通过检查配置脚本和编译选项，确保它们符合RISC-V的架构和ABI规范。</li>
+<li>使用标准的RISC-V测试套件（如RISC-V Tests）来验证编译出的工具链的正确性和兼容性。</li>
+</ul>
+<h3 id="四、编译完成后，提供详细的编译命令和结果说明"><a href="#四、编译完成后，提供详细的编译命令和结果说明" class="headerlink" title="四、编译完成后，提供详细的编译命令和结果说明"></a>四、编译完成后，提供详细的编译命令和结果说明</h3><p><strong>编译命令</strong></p>
+<ul>
+<li><p>配置命令（示例）：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码../configure --prefix=/opt/riscv --with-arch=rv64imac --with-abi=lp64</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译命令：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码make</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装命令：</p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash复制代码<span class="built_in">sudo</span> make install</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>结果说明</strong></p>
+<ul>
+<li>编译过程中，终端将显示各种编译信息和进度条。</li>
+<li>如果没有出现错误消息，并且所有步骤都成功完成，那么RISC-V交叉编译工具链就已经成功编译并安装到了指定的目录（在本例中为<code>/opt/riscv</code>）。</li>
+<li>你可以通过运行<code>riscv64-unknown-elf-gcc --version</code>来验证工具链是否已正确安装，并查看其版本信息。</li>
+</ul>
+<p>请注意，上述步骤和命令可能会根据你的具体需求和环境设置而有所变化。务必参考RISC-V GNU Toolchain的官方文档和GitHub仓库中的最新信息。</p>
+]]></content>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>健康</title>
+    <url>/2025/08/03/%E5%81%A5%E5%BA%B7/</url>
+    <content><![CDATA[<p>「锻炼+少吃」是关键，做到这些你就能延长 5 到 11 年的寿命。如果说要抓大小，锻炼和少吃就是绝对的大局。<br>米恩斯的做法是每天早上醒来什么都不干就先出门待上十分钟照太阳。<br>你应该每天在固定时间入睡，一觉睡上 7 到 8 小时，中间最好不要醒<br>米恩斯建议只在白天进食。<br>如果你喜欢吃碳水应该在白天吃，最好是早上。<br>你应该先吃菜，再吃肉，最后吃碳水。<br>所以餐前或者餐中吃点醋，大约 15~30 毫升，就能显著降低餐后血糖水平。<br>饭后散步 15 分钟，能让血糖降低 30%。<br>推荐的锻炼方式是每周进行 150 分钟的中等强度有氧运动，比如快走或慢跑<br>非锻炼活动热量消耗（non-exercise activity thermogenesis，NEAT）<br>桌下跑步机（desk teradmill）<br>每天至少走 7000 步，最好达到一万步。要求把这些步数分散在一天之中，随时走动，不要集中一次走完。<br>每周多次托举重物，搞抗阻训练，锻炼各个主要肌肉群。<br>寒冷环境会让你获得更多的棕色脂肪，而非白色脂肪。白色脂肪是储存能量的，棕色脂肪则能燃烧能量产生热量。棕色脂肪比例高于白色脂肪，人体代谢会更健康。<br>每天淋浴洗完后，把水调到冷水，冲上两分钟 —— 你会感觉很好<br>每周进行 47 分钟的热桑拿和 11 分钟的冷暴露，这样对代谢、胰岛素和生长激素都有好处。<br>你希望动起来，最好来点反脆弱，偶尔让自己处于舒适的边缘，给身体施加一些急性压力。偶尔感到不适会刺激自身能力，增强抗炎和抗氧化水平。</p>
+<p>一通过可穿戴设备随时监测自己的心率变异性（Heart Rate Variability, HRV）<br>把给你压力的问题写下来，哪怕只写 5 分钟，那个压力也会得到疏导。<br>写积极情感日记。有研究发现，连续 12 周每天记录下值得感激的事和帮助过自己的人，焦虑程度会显著改善。<br>你还需要主动参与社会活动，多跟朋友和亲人联系，加强社会连接<br>冥想的关键理念，是你的情绪不能定义你的身份。<br>用注意力对身体进行扫描。比如从头部开始，感受一下脸，感受空气如何进入鼻子和肺部，然后到胸部感受心跳，再到臀部感受椅子，接着感受脚对地面上的触感。这种扫描能帮你专注于「当下」，从而不被无关的琐事所困扰。</p>
+<p>哪怕你不知道具体要干什么，也得先确保自己在牌桌上。好运气往往是跑出来的。你得跑去现场，哪怕当个配角。职业生涯就像一股水流。你要做的就是确保自己处在主流里，跟着主流运动即可。在运动中发生什么是不确定的，但关键是你必须属于主流。</p>
+<p>到中心去，到队伍中去，改变环境就能改变人。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>像 Blender 中的专业人士一样渲染（ACES、视图层、通道）</title>
+    <url>/2024/12/24/%E5%83%8F%20Blender%20%E4%B8%AD%E7%9A%84%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%A3%AB%E4%B8%80%E6%A0%B7%E6%B8%B2%E6%9F%93%EF%BC%88ACES%E3%80%81%E8%A7%86%E5%9B%BE%E5%B1%82%E3%80%81%E9%80%9A%E9%81%93%EF%BC%89/</url>
+    <content><![CDATA[<p><a href="https://www.bilibili.com/video/BV1rH1EY6EpE?spm_id_from=333.1245.0.0">像 Blender 中的专业人士一样渲染（ACES、视图层、通道）</a></p>
+<p>实习报告的计划咋弄呢<br>日记的同步问题还有电子化的问题</p>
+]]></content>
+      <tags>
+        <tag>bilivideo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>免疫-炎症与血管</title>
+    <url>/2024/11/08/%E5%85%8D%E7%96%AB-%E7%82%8E%E7%97%87%E4%B8%8E%E8%A1%80%E7%AE%A1/</url>
+    <content><![CDATA[<p>抗原与不完全抗原</p>
+<p>肥大细胞收到损伤或与某些受体结合产生一系列炎症反应因子如:组胺之类的<br>这些分子会导致血管壁细胞收缩,血管的通透性增大使得液体渗透到组织间导致肿胀<br>分子是平滑肌放松,导致血管扩张,局部的血管扩张导致局部的发热.同时血管扩张后更多的血液流经此处导致红肿,和热量上升</p>
+<p>炎症反应的表现:</p>
+<ol>
+<li>肿胀</li>
+<li>疼痛</li>
+<li>发热</li>
+<li>红肿</li>
+<li>关节</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>医学,生物学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>养老相关资料</title>
+    <url>/2025/02/24/%E5%85%BB%E8%80%81%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/</url>
+    <content><![CDATA[<ul>
+<li><p>老年人的定义</p>
+<ul>
+<li>60岁以上10%</li>
+<li>65岁以上7%</li>
+</ul>
+</li>
+<li><p>老年人居住建筑:具有自理能力的老人</p>
+</li>
+<li><p>养老设施:失能老人</p>
+</li>
+<li><p>.</p>
+</li>
+</ul>
+<p>目前国家的养老方针:家庭为基础,社区为依托,机构做补充</p>
+<p>老年建筑开发模式:</p>
+<ul>
+<li>医养结合型养老</li>
+<li>旅游养老结合型</li>
+<li>保险养老结合型</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>如何阅读一本书</title>
+    <url>/2025/08/02/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/</url>
+    <content><![CDATA[<h2 id="一-读书的层次与要点"><a href="#一-读书的层次与要点" class="headerlink" title="一. 读书的层次与要点"></a>一. 读书的层次与要点</h2><p>读书可以分为四个层次:</p>
+<ul>
+<li>基础阅读</li>
+<li>检视阅读</li>
+<li>分析阅读</li>
+<li>主题阅读</li>
+</ul>
+<p>读书的要点:</p>
+<ul>
+<li>做一个主动的读者</li>
+<li>针对不同等级的读物采取不同的速度与策略</li>
+<li>不同种类的读物也有不同的要点</li>
+</ul>
+<p>读书时提出的问题：</p>
+<ul>
+<li>整体来说，这本书在讲什么？</li>
+<li>作者细部都说了什么，怎么说的？</li>
+<li>这本书说的有道理吗，是全部有道理还是部分有道理</li>
+<li>这本书和你有什么关系</li>
+</ul>
+<p>三种笔记类型：</p>
+<ul>
+<li>结构笔记：这种笔记的重点的书的骨架结构</li>
+<li>概念笔记：这种笔记的重点是作者的观点看法</li>
+<li>辩证笔记：重点是你对作者的观点的看法和对其他人观点的看法</li>
+</ul>
+<h2 id="二-基础阅读"><a href="#二-基础阅读" class="headerlink" title="二. 基础阅读"></a>二. 基础阅读</h2><p>基础阅读是阅读的第一步. 其要求是读者有能力认出读物中各词语的意思, 没有不认识的字词.</p>
+<h2 id="三-检视阅读"><a href="#三-检视阅读" class="headerlink" title="三. 检视阅读"></a>三. 检视阅读</h2><p>检视阅读分两层次</p>
+<h3 id="第一层：由系统性的略读或粗读"><a href="#第一层：由系统性的略读或粗读" class="headerlink" title="第一层：由系统性的略读或粗读"></a>第一层：由系统性的略读或粗读</h3><p>目标： 确定这本书是否值得读，值得花多长时间来读</p>
+<ul>
+<li>先看书名页，序，以及副标题，作者简介，出版者的介绍之类的<ul>
+<li>明确书的主题，对书进行归类</li>
+</ul>
+</li>
+<li>研究目录页</li>
+<li>研究附录和索引</li>
+<li>挑几个与主题相关的章节看</li>
+<li>打开书，东翻翻西翻翻，把书差不多过一遍</li>
+</ul>
+<h3 id="第二层：粗浅的阅读"><a href="#第二层：粗浅的阅读" class="headerlink" title="第二层：粗浅的阅读"></a>第二层：粗浅的阅读</h3><p>从头到尾将书完整的读一遍，即使碰到不懂得地方也不要停下来查询和思考</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>可靠传输的三种机制</title>
+    <url>/2024/10/30/%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E7%9A%84%E4%B8%89%E7%A7%8D%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<ul>
+<li>停止等待协议SW</li>
+<li>回退N帧协议(滑动窗口协议)GBN</li>
+<li>选择重传协议SR</li>
+</ul>
+<h3 id="停止等待协议-SW"><a href="#停止等待协议-SW" class="headerlink" title="停止等待协议:SW"></a>停止等待协议:SW</h3><p>发送方每次只允许发送一个帧,接收方每接受一个帧就要发送一个应答信息,表示可以发送下一帧,发送方收到应答信号之后才能发送下一帧.若发送方未收到应答信号则一直等待</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>开源笔记软件</title>
+    <url>/2024/02/15/%E5%BC%80%E6%BA%90%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<p>总结一下市面上的开源的笔记软件</p>
+<ul>
+<li>思源笔记</li>
+<li>joplin</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>笔记软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>建筑结构</title>
+    <url>/2024/06/04/%E5%BB%BA%E7%AD%91%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="梁和悬挑结构"><a href="#梁和悬挑结构" class="headerlink" title="梁和悬挑结构"></a>梁和悬挑结构</h2><p>简支梁的受力特点与变形特点:</p>
+<ul>
+<li>内力和挠度较大</li>
+<li>当两端支座有不均匀沉降时,不会引起附加内力</li>
+<li>常用于中小跨度建筑物</li>
+<li>当建筑物的地基较差时使用</li>
+<li>作为沉降缝之间的链接构件</li>
+</ul>
+<p>多跨连续梁的特点:</p>
+<ul>
+<li>内力小,刚度大抗震性好,安全储备高</li>
+<li>对支座形变敏感,当支座产生不均匀沉降时会引起附加内力</li>
+</ul>
+<p>悬挑结构抗倾覆的方法:</p>
+<ul>
+<li>上部重压平衡(雨篷,阳台)</li>
+<li>下部拉压平衡(悬挑网架,网壳)</li>
+<li>左右自平衡(车库,机库)</li>
+<li>副跨框架平衡(剧院挑台)</li>
+</ul>
+<p>普通钢筋混凝土薄腹梁的适用跨度是6-12m, 预应力梁的适用跨度是12-18m</p>
+<p>梁按支座约束分为:</p>
+<ul>
+<li>静定梁</li>
+<li>超静定梁</li>
+</ul>
+<h2 id="桁架结构"><a href="#桁架结构" class="headerlink" title="桁架结构"></a>桁架结构</h2><p>![[Pasted image 20240604165105.png]]<br>桁架结构:</p>
+<ul>
+<li>上弦杆</li>
+<li>下弦杆</li>
+<li>斜腹杆</li>
+<li>竖腹杆</li>
+</ul>
+<p>桁架:由直杆组成的一般具有三角形单元的平面或空间结构</p>
+<p>屋架:在建筑中,桁架常用来作为屋盖的承重结构</p>
+<p>桁架计算的假设:</p>
+<ol>
+<li>杆均为直杆,且在同一平面内</li>
+<li>杆件之间相连的节点均为铰接节点(不受弯矩,只有轴力)</li>
+<li>外力均作用在平面内</li>
+</ol>
+<p>桁架的内力分布特点:</p>
+<ol>
+<li>以轴力为主,各杆件分布不均匀</li>
+<li>上弦杆受压,下弦杆受拉</li>
+<li>竖腹杆和斜腹杆的内力可能为轴向拉力或轴向压力（由杆件布置决定），抵抗外荷载产生的剪力作用</li>
+<li>抛物线&gt;折线&gt;梯形&gt;三角形,矩形</li>
+</ol>
+<p>桁架结构的缺点:</p>
+<ul>
+<li>结构高度大</li>
+<li>侧向刚度小</li>
+</ul>
+<p>屋架的形式:</p>
+<ul>
+<li><p>抛物线</p>
+</li>
+<li><p>三角形</p>
+</li>
+<li><p>梯形</p>
+</li>
+<li><p>折线</p>
+</li>
+<li><p>木屋架</p>
+</li>
+<li><p>钢-木组合屋架</p>
+</li>
+<li><p>钢屋架</p>
+</li>
+<li><p>钢筋混凝土屋架</p>
+</li>
+</ul>
+<p>张弦结构的特点:</p>
+<ul>
+<li>承载力高</li>
+<li>结构刚度大</li>
+<li>结构稳定性强</li>
+<li>支座推力小</li>
+<li>建筑造型适应力强</li>
+<li>制作运输施工方便</li>
+</ul>
+<h2 id="拱式结构"><a href="#拱式结构" class="headerlink" title="拱式结构"></a>拱式结构</h2><p>![[Pasted image 20240604170957.png]]\</p>
+<p>设计中,使拱主要承受轴力,减少弯矩</p>
+<p>合理拱轴线:使拱截面内仅有轴力没有弯矩的拱轴线</p>
+<p>拱脚水平推力的平衡方式:</p>
+<ul>
+<li>水平推力直接由<u>拉杆</u>承担</li>
+<li>通过<u>刚性水平结构</u>传递给总拉杆</li>
+<li>由<u>竖向承重结构</u>承担</li>
+<li>直接作用在<u>基础</u>上</li>
+</ul>
+<p>为了减小拱架对拱脚的推力,可以增大矢高</p>
+<p>按力学计算简图分类:</p>
+<ul>
+<li>无铰拱</li>
+<li>两铰拱</li>
+<li>三铰拱</li>
+</ul>
+<p>按拱身截面分类:</p>
+<ul>
+<li>格构式:节省材料,施工快,构造简单,受力合理</li>
+<li>实腹式:一般做为曲线外形,常为焊接工字形截面</li>
+<li>等截面</li>
+<li>变截面</li>
+</ul>
+<p>拱结构的布置:</p>
+<ul>
+<li>并列布置</li>
+<li>径向布置</li>
+<li>环向布置</li>
+<li>井式布置</li>
+<li>多叉布置</li>
+</ul>
+<p>拱的优点:</p>
+<ul>
+<li>弯矩剪力小,轴压力大</li>
+<li>应力沿截面高度均匀分布</li>
+<li>节省材料,减轻自重</li>
+<li>宜采用抗压强度高的材料</li>
+<li>跨度较大,有较大的利用空间</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>曲线形状施工不方便</li>
+<li>拱对基础或下部结构施加水平推力,增加下部结构的材料用量</li>
+</ul>
+<p>使用范围:</p>
+<ol>
+<li>大中小型房屋,桥梁,展览馆等公共建筑结构</li>
+<li>纪念观赏型建筑</li>
+<li>与悬索结构使用可充分发挥二者优势</li>
+</ol>
+<hr>
+<h2 id="空间薄壁结构"><a href="#空间薄壁结构" class="headerlink" title="空间薄壁结构"></a>空间薄壁结构</h2><p>平面受力结构:</p>
+<ul>
+<li>梁</li>
+<li>桁架</li>
+<li>拱</li>
+<li>钢架</li>
+</ul>
+<p>平面受力结构的特点:</p>
+<ul>
+<li>优点: 荷载为单向传递,计算方便,施工方便</li>
+<li>缺点: 结构内力较大,材料强度得不到充分发挥,随着材料用量增加,空间整体性下降,安全性下降</li>
+</ul>
+<p>空间薄壁结构的分类:</p>
+<ul>
+<li>由曲面形薄板构成的薄壁结构</li>
+<li>由平面构成的折板,雁形板,幕结构</li>
+</ul>
+<p>薄壳结构的曲面形式:</p>
+<ul>
+<li>旋转曲面</li>
+<li>平移曲面</li>
+<li>直纹曲面</li>
+</ul>
+<p>薄壳结构施工方法:</p>
+<ul>
+<li>现浇混凝土壳体</li>
+<li>预制单元,高空装配壳体</li>
+<li>地面现浇或预制,整体提升</li>
+<li>装配整体式叠合壳体</li>
+<li>采用柔模喷涂成壳</li>
+</ul>
+<p>![[Pasted image 20240604221929.png]]<br>圆顶支座环的截面形式</p>
+<p>圆顶的支承结构:</p>
+<ul>
+<li>通过支座环支承在房屋竖向承重构件上</li>
+<li>支承在斜柱或斜拱上</li>
+<li>支撑在框架上</li>
+<li>直接落地并支承在基础上</li>
+</ul>
+<p>圆顶结构壳板厚度建议取圆顶半径的1&#x2F;600.对于现浇钢筋混凝土圆顶,厚度不应小于40mm,对于装配式不小于30mm</p>
+<p>筒壳由壳身,侧边构件,横隔三部分组成</p>
+<p>两个横隔之间的距离为跨度$l_{1}$,两个侧边构件之间的距离为波长$l_{2}$</p>
+<p>矢高:不包括侧边构件在内的高度f</p>
+<p>截面高度:包括侧边构件在内的高度h</p>
+<p>跨度方向为纵向,波长方向为横向</p>
+<p>$l_1&#x2F;l_2\geq 3$时,为长壳,$l_1&#x2F;l_2\leq 0.5$时,为短壳,$0.5\leq l_{1}&#x2F;l_{2}\leq 3$时为中长壳</p>
+<h2 id="平板网架"><a href="#平板网架" class="headerlink" title="平板网架"></a>平板网架</h2><p>空间网格结构是由许多杆件根据建筑形体要求,按照一定的规律进行布置,通过节点连接组成的一种网状的三维杆系结构</p>
+<p>![[Pasted image 20240604215009.png]]’</p>
+<p>平板网架结构的优点:</p>
+<ul>
+<li>为多向受力的空间结构,比平板桁架适用跨度更大,更节省钢材</li>
+<li>结构整体刚度大,稳定性好,能有效地承受各种非对称荷载</li>
+<li>边梁简化,便于下部承重结构的布置,构造简单,节省材料</li>
+<li>应用范围广,平面布置灵活</li>
+</ul>
+<p>三向交叉网架比两向网架的空间刚度大,杆件内力均匀,故适合在大跨度工程中使用,特别适用于三角形,梯形,正六边形,多边形及圆形平面中.但杆件种类多,节点构造复杂,在中小跨度中不经济</p>
+<p>网架结构的支承方式：</p>
+<ul>
+<li>周边支撑</li>
+<li>三边支承</li>
+<li>两边支承</li>
+<li>点支撑</li>
+<li>周边支撑与点支撑相结合</li>
+</ul>
+<h2 id="网壳"><a href="#网壳" class="headerlink" title="网壳"></a>网壳</h2><p>![[Pasted image 20240604214824.png]]</p>
+<p>网壳结构的优点:</p>
+<ul>
+<li>主要承受轴力，内力分布均匀，应力峰值较小,充分发挥材料强度作用</li>
+<li>具有丰富的造型,给设计人员以充分的设计自由和想象空间</li>
+<li>可把网壳结构近似地看成各向同性或各向异性的连续体，利用钢筋混凝土薄壳结构的分析结果进行定性的分析。</li>
+<li>可以用直杆代替曲杆，以折面代替曲面，如果杆件布置和构造处理得当，可以具有与薄壳结构相似的良好的受力性能。同时又便于工厂制造和现场安装，在构造上和施工方法上具有与平板网架结构一样的优越性</li>
+</ul>
+<p>网壳结构的缺点:</p>
+<ul>
+<li>杆件和节点几何尺寸的偏差以及曲面的偏离对网壳的内力、整体稳定性和施工精度影响较大，这给结构设计带来了困难。另外，为减少初始缺陷，对于杆件和节点的加工精度提出较高的要求，这就给制作加工增加了困难。这些缺点在大跨度网壳中显得更加突出。</li>
+<li>网壳结构可以构成大空间，但当矢高很大时，增加了屋面面积和不必要的建筑空间，增加建筑材料和能量的消耗。</li>
+<li>网壳结构虽然能跨越很大的跨度，但主要为承受压力，存在稳定问题，并不能充分利用材料的强度，因此超过某一跨度后就会显得不经济</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>十分钟经济学</title>
+    <url>/2025/07/11/%E5%8D%81%E5%88%86%E9%92%9F%E7%BB%8F%E6%B5%8E%E5%AD%A6/</url>
+    <content><![CDATA[<h2 id="第一节"><a href="#第一节" class="headerlink" title="第一节"></a>第一节</h2><p>经济学的基本假设：</p>
+<ol>
+<li>资源是稀缺的</li>
+<li>每一件事都是有成本的</li>
+</ol>
+<p>你需要衡量收益与成本，使得收益最大化</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>微积分学习笔记</title>
+    <url>/2023/12/14/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>求导有哪些用处?</p>
+<ol>
+<li>给定一个曲线上的点以及曲线的方程,可以求该点的切线</li>
+<li>计算运动物体的加速度</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微观经济学读书笔记</title>
+    <url>/2024/10/26/%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>作者:达龙*阿西莫格鲁</p>
+<p>经济学的三原则:</p>
+<ul>
+<li>优化:人们试图做出最优可行选择</li>
+<li>均衡:经济系统倾向于达到均衡.均衡状态下,没有人能够通过改变自己的行为增进自己的利益</li>
+<li>基于数据进行分析的实证主义</li>
+</ul>
+<p>权衡:人们牺牲一部分利益去换取另一部分利益<br>预算约束:在不超出预算的前提下,一个人选择或购买的物品组合<br>机会成本:一般将最佳替代活动成为机会成本</p>
+<p>成本-收益分析</p>
+<p>效用函数<br>需求曲线: 表示价格与数量之间的关系的曲线<br>无差异曲线</p>
+<h4 id="需求的弹性"><a href="#需求的弹性" class="headerlink" title="需求的弹性"></a>需求的弹性</h4><p>$\varepsilon&#x3D;\frac{\Delta Q}{\Delta P},\varepsilon \leq 0$</p>
+<p>$\Delta Q:$ 数量变化率<br>$\Delta P:$ 价格变化率</p>
+<ul>
+<li>需求弹性等于0,生活必需品, 价格的变动不影响购买</li>
+<li>需求弹性为负无穷, 完全弹性需求, 有相当多的替代品</li>
+</ul>
+<p>商品的可替代性越大, 需求弹性越大</p>
+<p>恩格尔曲线: 反应了收入与需求变化的曲线 </p>
+<p>正常商品: 收入越高买的越多<br>劣等商品: 收入越高买的越少</p>
+]]></content>
+      <tags>
+        <tag>经济</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>抗锯齿方法</title>
+    <url>/2024/01/15/%E6%8A%97%E9%94%AF%E9%BD%BF%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="为何有锯齿"><a href="#为何有锯齿" class="headerlink" title="为何有锯齿"></a>为何有锯齿</h3><h3 id="抗锯齿的方法"><a href="#抗锯齿的方法" class="headerlink" title="抗锯齿的方法"></a>抗锯齿的方法</h3><h4 id="超级采样抗锯齿SSAA"><a href="#超级采样抗锯齿SSAA" class="headerlink" title="超级采样抗锯齿SSAA"></a>超级采样抗锯齿SSAA</h4><p>将图像渲染到一个分辨率更高的虚拟屏幕上，然后再将其释放回原分辨率，图形中具有锯齿的部分则以不同透明的的颜色填充，从而减少锯齿<br>效果公认好，但对算力要求较高</p>
+<h4 id="多重采样抗锯齿MSAA"><a href="#多重采样抗锯齿MSAA" class="headerlink" title="多重采样抗锯齿MSAA"></a>多重采样抗锯齿MSAA</h4><h4 id="时间性抗锯齿TAA"><a href="#时间性抗锯齿TAA" class="headerlink" title="时间性抗锯齿TAA"></a>时间性抗锯齿TAA</h4><p>针对游戏里帧于帧之间产生锯齿的解决方案<br>通过混合前一帧和当前帧的信息来，来对全屏进行抗锯齿处理</p>
+<h4 id="快速近似抗锯齿FXAA"><a href="#快速近似抗锯齿FXAA" class="headerlink" title="快速近似抗锯齿FXAA"></a>快速近似抗锯齿FXAA</h4>]]></content>
+      <tags>
+        <tag>计算机图形学</tag>
+        <tag>抗锯齿</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指令系统</title>
+    <url>/2024/10/31/%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>操作数的寻址模式:</p>
+<ul>
+<li>立即数</li>
+<li>寄存器<br>  + </li>
+<li>内存引用</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>计算机组成原理,考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统原理与实现笔记</title>
+    <url>/2024/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>策略与机制相分离<br>策略是指”要做什么”,机制是指”要如何实现”</p>
+<p>管理系统复杂度的方法:<br><strong>MALH方法</strong>:</p>
+<ol>
+<li>模块化</li>
+<li>抽象:接口与内部实现分离</li>
+<li>分层:不同模块之间的层次化</li>
+<li>层级:同类模块之间的分层</li>
+</ol>
+<p>内核架构种类:</p>
+<ul>
+<li>宏内核:linux</li>
+<li>微内核:arm,risv</li>
+<li>外核</li>
+<li>多内核</li>
+<li>混合内核</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>材质总纲</title>
+    <url>/2025/03/03/%E6%9D%90%E8%B4%A8/</url>
+    <content><![CDATA[<h2 id="做材质的思路"><a href="#做材质的思路" class="headerlink" title="做材质的思路"></a>做材质的思路</h2><ul>
+<li>简单材质<ul>
+<li>透明<ul>
+<li>平面:水,玻璃…</li>
+<li>3D:sss,皮肤,牛奶</li>
+</ul>
+</li>
+<li>不透明<ul>
+<li>金属</li>
+<li>非金属<ul>
+<li>皮革</li>
+<li>布料</li>
+<li>木头</li>
+<li>石头</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>复杂材质(层材质):简单材质的组合<ul>
+<li>一层</li>
+<li>两层</li>
+<li>三层</li>
+<li>…</li>
+</ul>
+</li>
+<li>特殊材质<ul>
+<li>丝绸</li>
+<li>头发</li>
+<li>纱</li>
+<li>车漆</li>
+</ul>
+</li>
+</ul>
+<p>同时对于单层材质也可以进行一步的细分</p>
+<ul>
+<li>基础颜色</li>
+<li>表面高光:镜面反射,粗糙度</li>
+<li>次表面</li>
+<li>内部体积:体积吸收,散射,发光</li>
+</ul>
+<p>![[Pasted image 20250303013242.png|00x200]]</p>
+<p>![[PBR材质]]</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>福格行为模型</title>
+    <url>/2025/08/24/%E7%A6%8F%E6%A0%BC%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>福格行为模型:</p>
+<ul>
+<li>作者: B.J.福格</li>
+<li>出版社: 天津科学技术出版社</li>
+<li>出版时间: 2021年10月</li>
+<li>ISDN: 9787557696672</li>
+<li>阅读方式: 电子书</li>
+</ul>
+<p>在书中, 作者提出了 $行动&#x3D;动机+能力+提示$ 的模型, 认为如果要改变自己或他人的行为, 就要从这三方面入手.<br>该书一共分为八章, 第一章为总述, 二三四章分别从三方面进行细讲, 六七讲的是在实践过程中的一些小技巧和注意事项, 第八章则从自己过渡到群体, 讲对群体的行为设计</p>
+<h2 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h2><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>第一章开篇使用作者在健身房收到红十字捐款信息的例子引出的行为的三要素. 然后分为四部分来进行叙述.</p>
+<h4 id="三要素齐备，行为才能发生"><a href="#三要素齐备，行为才能发生" class="headerlink" title="三要素齐备，行为才能发生"></a>三要素齐备，行为才能发生</h4><p>在这部分作者想要说明:</p>
+<ol>
+<li>行为的表现可能不同, 但底层机制都是相同的, 以此说明模型的普适性</li>
+<li>动机越强，行为就越有可能做到</li>
+<li>行为越容易，就越有可能成为习惯</li>
+<li>动机和能力要像队友一样密切配合. 如果其中一方较弱，那另一方就需要很强才能促进行动，让行为落到行动线上方.</li>
+<li>没有提示，任何行为都不会发生</li>
+</ol>
+<p>凯蒂整理办公桌和刷手机两个习惯的例子说明不同的行为底层的要素是一样都是这三个, 展现模型的普适性. 然后对凯蒂两个习惯在三要素上的不同进行分析, 来说明只有在动机和能力在线, 同时在恰当的提示下, 行为才能实现.</p>
+<h4 id="理解行为，就能影响行为"><a href="#理解行为，就能影响行为" class="headerlink" title="理解行为，就能影响行为"></a>理解行为，就能影响行为</h4><p>在这部分作者想要说明该模型的重要性. 通过该模型理解和改变自身和他人的行为.<br>该处作者使用了以下例子:</p>
+<ol>
+<li>作者在飞机上遇到了踢她椅子的孩子. 作者通过送他玩具的方式改变了他的<strong>动机</strong>, 使自己得到安宁</li>
+<li>作者在浴室清洁中, 通过其丈夫的演示降低了自己行动的<strong>能力</strong>需求, 因而使自己能行动起来</li>
+</ol>
+<h4 id="解决行为问题的-3-个步骤"><a href="#解决行为问题的-3-个步骤" class="headerlink" title="解决行为问题的 3 个步骤"></a>解决行为问题的 3 个步骤</h4><p>在这部分, 作者列出了想实施行为或想要别人实施行为的步骤:</p>
+<ol>
+<li>检查有没有行为提示</li>
+<li>检查有没有行为能力</li>
+<li>检查有没有行为动机</li>
+</ol>
+<p>该部分使用了女儿没把海报纸带回家 (因为她忘了), 通过分析发现问题出在没有<strong>提示</strong>上, 于是备忘录进行提示, 她成功带回的海报纸. 以此介绍 3 步骤如何使用.</p>
+<h4 id="用福格行为模型观察世界"><a href="#用福格行为模型观察世界" class="headerlink" title="用福格行为模型观察世界"></a>用福格行为模型观察世界</h4><p>这部分作者建议使用福格行为模型来观察世界, 因为:</p>
+<ol>
+<li>这样做很有趣</li>
+<li>它能帮助你根据动机、能力和提示3个要素去剖析行为，从而识别自身或他人的行为驱动因素<br>该部分使用了珍妮弗运动的例子, 同时用动机猴子诓骗我们设下不合理的目标引出下一张对动机的说明.</li>
+</ol>
+<h3 id="第二章-动机"><a href="#第二章-动机" class="headerlink" title="第二章: 动机"></a>第二章: 动机</h3><p>这一章介绍了当你想改变行为时, 针对动机我们需要注意的地方. 以及进行行为设计的步骤</p>
+<p>行为设计的步骤:</p>
+<ol>
+<li>明确愿望</li>
+<li>探索行为选项 (行为集群)</li>
+<li>匹配具体行为 (焦点地图)</li>
+</ol>
+<h4 id="明明拥有动机却还是无法改变的-5-个原因"><a href="#明明拥有动机却还是无法改变的-5-个原因" class="headerlink" title="明明拥有动机却还是无法改变的 5 个原因"></a>明明拥有动机却还是无法改变的 5 个原因</h4><ol>
+<li>动机很复杂</li>
+<li>动机冲上顶峰后会迅速回落</li>
+<li>动机波动十分频繁</li>
+<li>将动机用于追逐抽象概念无法产生结果</li>
+<li>仅凭动机无法实现长期改变</li>
+</ol>
+<p><strong>摘要</strong></p>
+<ul>
+<li>人物（person）、行动（action）和情境（context）是理解人类行为的基础。</li>
+<li>动机有三个来源:<ol>
+<li>你自己（你想要的）</li>
+<li>你希望通过采取行动可以得到的利益或受到的惩罚（胡萝卜加大棒）</li>
+<li>你的周遭环境 (所有朋友都在做这件事)</li>
+</ol>
+</li>
+<li>一种行为的动机可能不止一个来源, 甚至也会有相互冲突的动机</li>
+<li>高水平动机是很难维持的</li>
+<li>在行为设计领域，我们将动机短期激增的现象称为动机波浪。</li>
+<li>动机的波动十分频繁，它甚至每分钟都在波动。</li>
+<li>在福格行为模型的3个要素中，动机是最不可预测和最不可靠的。想获得持久的改变，仅靠动机是不够的</li>
+<li>因为你多半无法维持动机，也可能无法对动机进行可靠的操作或设计。</li>
+</ul>
+<h4 id="明确愿望与列出行为集群"><a href="#明确愿望与列出行为集群" class="headerlink" title="明确愿望与列出行为集群"></a>明确愿望与列出行为集群</h4><h4 id="行为匹配的-3-个误区"><a href="#行为匹配的-3-个误区" class="headerlink" title="行为匹配的 3 个误区"></a>行为匹配的 3 个误区</h4><ul>
+<li>误区1：全凭猜测，毫无章法</li>
+<li>误区2：从网上找灵感</li>
+<li>误区3：照搬朋友的成功经验</li>
+</ul>
+<h4 id="焦点地图"><a href="#焦点地图" class="headerlink" title="焦点地图"></a>焦点地图</h4><h4 id="轻松找到你的黄金行为"><a href="#轻松找到你的黄金行为" class="headerlink" title="轻松找到你的黄金行为"></a>轻松找到你的黄金行为</h4>]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>心理学</tag>
+        <tag>行为设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>社会学遐想</title>
+    <url>/2023/12/16/%E7%A4%BE%E4%BC%9A%E5%AD%A6%E9%81%90%E6%83%B3/</url>
+    <content><![CDATA[<ol>
+<li>阶级只是一种分类手段</li>
+<li>作为一种分类的手段，其是如何是他人收益的</li>
+<li>阶级是以什么作为分类的标准的？</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>社会学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数学习笔记</title>
+    <url>/2023/12/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>线代这门课的基础作用是教你解线性方程。他从列图像引入对于矩阵和线性相关性的理解，而将矩阵运算的核心定位于对“行”或“列”进行独立操作。</p>
+<ul>
+<li>线性方程组</li>
+<li>矩阵</li>
+<li>向量</li>
+<li>向量方程</li>
+<li>线性组合</li>
+<li></li>
+</ul>
+<h3 id="内积与外积"><a href="#内积与外积" class="headerlink" title="内积与外积"></a>内积与外积</h3><h4 id="1-内积"><a href="#1-内积" class="headerlink" title="1.内积"></a>1.内积</h4><p>设两个向量$a,b$,他们的夹角为$\theta$,则此两向量的内积为:<br>$$a<em>b &#x3D; |a||b|cos\theta$$<br>又称<strong>点积</strong>或者*<em>数量积</em></em><br>内积的概念 <strong>对于任意维数的向量都适用</strong></p>
+<h4 id="2-外积"><a href="#2-外积" class="headerlink" title="2.外积"></a>2.外积</h4><p>外积是 <strong>三维向量特有的运算</strong><br>定义向量$\boldsymbol a,\boldsymbol b$的外积为一个向量，记为$\boldsymbol a\times \boldsymbol b$，其模与方向定义如下：</p>
+<ol>
+<li>$|a| \times |b| &#x3D; |a||b|sin&lt;a,b&gt;$</li>
+<li>$a \times b$与$a,b$都垂直,且 $a \times b$与$a,b$符合右手法则<br>外积的几何意义是$|\boldsymbol a\times \boldsymbol b|$是以 $\boldsymbol a,\boldsymbol b$为邻边的平行四边形的面积。</li>
+</ol>
+<h3 id="线性变换-映射"><a href="#线性变换-映射" class="headerlink" title="线性变换(映射)"></a>线性变换(映射)</h3><h5 id="单位矩阵："><a href="#单位矩阵：" class="headerlink" title="单位矩阵："></a>单位矩阵：</h5><p>一个矩阵，主对角线上的元素均为1，其他元素为0</p>
+<h5 id="对角矩阵"><a href="#对角矩阵" class="headerlink" title="对角矩阵"></a>对角矩阵</h5><p>除了主对角线上的元素，其他元素均为0</p>
+<h5 id="可逆矩阵（非奇异矩阵）"><a href="#可逆矩阵（非奇异矩阵）" class="headerlink" title="可逆矩阵（非奇异矩阵）"></a>可逆矩阵（非奇异矩阵）</h5><h5 id="不可逆矩阵（奇异矩阵）"><a href="#不可逆矩阵（奇异矩阵）" class="headerlink" title="不可逆矩阵（奇异矩阵）"></a>不可逆矩阵（奇异矩阵）</h5><h5 id="初等矩阵"><a href="#初等矩阵" class="headerlink" title="初等矩阵"></a>初等矩阵</h5><h5 id="初等行变换"><a href="#初等行变换" class="headerlink" title="初等行变换"></a>初等行变换</h5><p>初等行变换分为三种，分别是：</p>
+<ul>
+<li>倍加变换：把某一行换成它本身与另一行倍数的和</li>
+<li>对换变换：把两行对换</li>
+<li>倍乘变换把某一行的所有元素乘以同一个非零数</li>
+</ul>
+<h5 id="左乘与右乘"><a href="#左乘与右乘" class="headerlink" title="左乘与右乘"></a>左乘与右乘</h5><p>设A,B均为$m*n$行的矩阵，则<br>A左乘以B：BA，A右乘以B：AB</p>
+<h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><h4 id="分块矩阵"><a href="#分块矩阵" class="headerlink" title="分块矩阵"></a>分块矩阵</h4><h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><ul>
+<li>加法</li>
+<li>标量乘法</li>
+<li>乘法</li>
+<li>求逆</li>
+<li>转置</li>
+<li>秩</li>
+<li>行列式</li>
+<li>伴随</li>
+<li>分解</li>
+</ul>
+<h4 id="矩阵的分解"><a href="#矩阵的分解" class="headerlink" title="矩阵的分解"></a>矩阵的分解</h4><h5 id="LU分解"><a href="#LU分解" class="headerlink" title="LU分解"></a>LU分解</h5><h2 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h2><h2 id="第二章-矩阵代数"><a href="#第二章-矩阵代数" class="headerlink" title="第二章:矩阵代数"></a>第二章:矩阵代数</h2><h3 id="第二章在讲什么"><a href="#第二章在讲什么" class="headerlink" title="第二章在讲什么?"></a>第二章在讲什么?</h3><p>矩阵代数主要讲的是矩阵相关的一系列的东西,如</p>
+<ul>
+<li>矩阵的运算</li>
+<li>逆矩阵</li>
+<li>分块矩阵</li>
+<li>矩阵分解</li>
+</ul>
+<p>矩阵的运算有以下部分:</p>
+<ul>
+<li>矩阵相加</li>
+<li>标量乘法</li>
+<li>矩阵乘法</li>
+<li>转置</li>
+<li>乘幂</li>
+<li>子空间</li>
+<li>维数</li>
+<li>秩</li>
+</ul>
+<p>sunm</p>
+<h2 id="第四章-向量空间"><a href="#第四章-向量空间" class="headerlink" title="第四章:向量空间"></a>第四章:向量空间</h2><p>第四章对前三章所讲的向量的意义进行泛化,并证明在泛化后的向量与向量空间依然符合前三者所提出的规律.<br>泛化是指前三章中的向量与向量空间仅仅是坐标轴意义上的,而第四章则说明不仅仅只有直接的数字组成的向量具有这些性质,凡是符合向量的特点的数学对象乃至物理对象都可以被视为向量以及向量空间</p>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><ol>
+<li>三角矩阵的主对角线的元素是其特征值</li>
+</ol>
+<h2 id="方程组的几何解释"><a href="#方程组的几何解释" class="headerlink" title="方程组的几何解释"></a>方程组的几何解释</h2><p>理解方程组的两种方式:行图像与列图像<br>与行图像对应的是方程组的几何解释,对于二元方程组而言就是两条直线相交,而x与y的值便是焦点.<br>与列图像对应的是方程组的向量解释,将x对应的两个系数看作一组向量,y对应的系数看作向量,x与y便是对向量进行运算</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数及其应用习题</title>
+    <url>/2024/02/25/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="习题1-1"><a href="#习题1-1" class="headerlink" title="习题1.1"></a>习题1.1</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>$\begin{bmatrix} 1&amp;5&amp;7 \ -2&amp;-7&amp; -5 \end{bmatrix}$ $\sim$ $\begin{bmatrix}1&amp;5&amp;7 \ 0&amp;3&amp;9 \end{bmatrix}$ $\sim$ $\begin{bmatrix}1&amp;5&amp;7 \ 0&amp;1&amp;3 \end{bmatrix}$ $\sim$  $\begin{bmatrix} 1&amp;0&amp;-8 \ 0&amp;1&amp;3 \end{bmatrix}$ </p>
+<p>所以$x_1 &#x3D; -8,x_2 &#x3D; 3$</p>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><p>$\begin{bmatrix}2&amp;4&amp;-4\ 5&amp;7&amp;11\end{bmatrix}\sim \begin{bmatrix}1&amp;2&amp;-2\5&amp;7&amp;11\end{bmatrix} \sim \begin{bmatrix}1&amp;2&amp;-2 \ 0&amp;-3&amp;21\end{bmatrix}\sim \begin{bmatrix}1&amp;2&amp;-2 \ 0&amp;1&amp;-7\end{bmatrix} \sim \begin{bmatrix}1&amp;0&amp;12 \ 0&amp;1&amp;-7\end{bmatrix}$<br>所以$x_{1}&#x3D;12,x_{2}&#x3D;-7$</p>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="习题2-1"><a href="#习题2-1" class="headerlink" title="习题2.1"></a>习题2.1</h3><h4 id="1-1"><a href="#1-1" class="headerlink" title="1."></a>1.</h4><p>$-2A&#x3D;\begin{bmatrix}-4&amp;0&amp;2 \ -8&amp;10&amp;-4 \end{bmatrix}$</p>
+<p>$B-2A&#x3D;\begin{bmatrix}3&amp;-5&amp;3\-7&amp;6&amp;-7\end{bmatrix}$</p>
+<p>$AC无定义$</p>
+<p>$CD&#x3D;\begin{bmatrix}1&amp;13\-7&amp;-6\end{bmatrix}$</p>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2."></a>2.</h4><p>$A+2B&#x3D;\begin{bmatrix}16&amp;-10&amp;1\6&amp;-3&amp;-4\end{bmatrix}$</p>
+<p>$3C-E无定义$</p>
+<p>$CB&#x3D;\begin{bmatrix}-5&amp;-13&amp;-5\15&amp;6&amp;-5\end{bmatrix}$</p>
+<p>$EB无定义$</p>
+<h4 id="3-1"><a href="#3-1" class="headerlink" title="3."></a>3.</h4><p>$I_{2}&#x3D;\begin{bmatrix}1&amp;0\0&amp;1\end{bmatrix}$</p>
+<h3 id="习题2-9"><a href="#习题2-9" class="headerlink" title="习题2.9"></a>习题2.9</h3>]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+        <tag>习题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编译原理</title>
+    <url>/2024/12/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<p>编译流程：</p>
+<ul>
+<li>词法分析</li>
+<li>语法分析</li>
+<li>语义分析</li>
+<li>优化</li>
+<li>代码生成</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>肌肉骨骼系统</title>
+    <url>/2025/02/14/%E8%82%8C%E8%82%89%E9%AA%A8%E9%AA%BC%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h4 id="肌肉与神经节的交互"><a href="#肌肉与神经节的交互" class="headerlink" title="肌肉与神经节的交互"></a>肌肉与神经节的交互</h4><p>$\alpha$运动神经元负责控制骨骼肌的运动</p>
+<p>当动作电位到达突触小体的时候，钙离子被转运到内部刺激神经递质乙酰胆碱的释放<br>乙酰胆碱由乙酸和胆碱两部分组成，其中胆碱从食物中取得，乙酸来自与乙酰辅酶A</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>职测</title>
+    <url>/2025/08/12/%E8%81%8C%E6%B5%8B/</url>
+    <content><![CDATA[<h3 id="可能行推理"><a href="#可能行推理" class="headerlink" title="可能行推理"></a>可能行推理</h3><h4 id="削弱加强型"><a href="#削弱加强型" class="headerlink" title="削弱加强型"></a>削弱加强型</h4><h4 id="前提型"><a href="#前提型" class="headerlink" title="前提型"></a>前提型</h4><p><strong>关键特征</strong></p>
+<ul>
+<li>以下哪项是上述论证的必要前提?</li>
+<li>上书论证还需基于哪些前提?</li>
+<li>必要的前提不包括?</li>
+</ul>
+<h3 id="类比推理"><a href="#类比推理" class="headerlink" title="类比推理"></a>类比推理</h3><p>词项关系：</p>
+<ul>
+<li>全同关系</li>
+<li>全异关系<ul>
+<li>并列（相对全异）</li>
+<li>矛盾（绝对全异）</li>
+</ul>
+</li>
+<li>包含关系</li>
+<li>交叉关系</li>
+<li>因果关系</li>
+<li>顺承关系</li>
+<li>条件关系</li>
+<li></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>船长英语33题</title>
+    <url>/2024/07/09/%E8%88%B9%E9%95%BF33%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>基本句型: 名词 + 动词 + 名词</p>
+<p>v.词性:<br>n.词性:</p>
+<ul>
+<li>&#x3D;n: 名词,代词,数词</li>
+<li>其他词性变名词<ul>
+<li>adj -&gt; n</li>
+<li>adv -&gt; n</li>
+<li>v -&gt; n<ul>
+<li>v+ing</li>
+<li>to do</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>句子变n(名词性从句)(句子名词化)</li>
+</ul>
+<p>adj词性</p>
+<ul>
+<li>&#x3D;adj</li>
+<li>-&gt;adj<ul>
+<li>n-&gt;adj<ul>
+<li>直接用</li>
+<li>n’s</li>
+<li>prep.+n. -&gt; adj.</li>
+</ul>
+</li>
+<li>adv -&gt; adj : 去掉ly</li>
+<li>v -&gt; adj<ul>
+<li>doing</li>
+<li>ed</li>
+<li>to do</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>句子-&gt;adj(定语从句)</li>
+</ul>
+<p>adv词性</p>
+<ul>
+<li>&#x3D;adv</li>
+<li>-&gt;adv<ul>
+<li>n-&gt;adv<ul>
+<li>prep.+n. -&gt; adv.(介词短语做状语)</li>
+</ul>
+</li>
+<li>adj -&gt; adv : +ly</li>
+<li>v -&gt; adv<ul>
+<li>doing</li>
+<li>ed</li>
+<li>to do</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>句子-&gt;adv(状语从句)</li>
+</ul>
+<p>时:时间状语<br>态:动作和时间状语之间的关系</p>
+<h3 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h3><h4 id="例证题-用例子来说明观点"><a href="#例证题-用例子来说明观点" class="headerlink" title="例证题:用例子来说明观点"></a>例证题:用例子来说明观点</h4><ol>
+<li>思考题干</li>
+<li>缩小范围</li>
+<li>问题所问</li>
+<li>预判答案</li>
+<li>对比选项</li>
+</ol>
+<p>细节服从主旨,选择与主旨沾边的选项</p>
+]]></content>
+      <tags>
+        <tag>英语,考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>计算机网络的功能:</p>
+<ul>
+<li>数据通信</li>
+<li>资源共享</li>
+<li>分布式处理</li>
+<li>提高可靠性</li>
+<li>负载均衡</li>
+</ul>
+<h4 id="网络分类"><a href="#网络分类" class="headerlink" title="网络分类"></a>网络分类</h4><p>广域网(WAN):交换技术<br>城域网(MAN):以太网技术<br>局域网(LAN):广播技术<br>个人局域网(PAN)</p>
+<p>局域网广播式网络,广域网点对点网络</p>
+<h4 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h4><ul>
+<li>电路交换</li>
+<li>报文交换:将一段完整的信息封装成组</li>
+<li>分组交换:将完整信息分解为更小的块</li>
+</ul>
+<h4 id="性能计算"><a href="#性能计算" class="headerlink" title="性能计算:"></a>性能计算:</h4><p>带宽:(bit&#x2F;s)<br>时延:</p>
+<ul>
+<li>发送时延: 分组长度&#x2F;信道宽度</li>
+<li>传播时延: 信道长度&#x2F;电磁波在信道上的速率</li>
+<li>处理时延: </li>
+<li>排队时延<br>时延带宽积: $传播时延*信道宽度$<br>往返时间(RTT)<br>吞吐量<br>速率:bps,bit&#x2F;s,kb&#x2F;s,k&#x3D;$10^3$ , $M&#x3D; 10^6$<br>信道利用率: 有数据传输的时间&#x2F;总时间</li>
+</ul>
+<p>协议由语法,语义,同步三部分组成</p>
+<h4 id="服务的类型"><a href="#服务的类型" class="headerlink" title="服务的类型"></a>服务的类型</h4><ul>
+<li>面向连接和无连接</li>
+<li>可靠与不可靠</li>
+<li>有应答与无应答</li>
+</ul>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><h3 id="以太网MAC帧"><a href="#以太网MAC帧" class="headerlink" title="以太网MAC帧"></a>以太网MAC帧</h3><p>帧前有8字节前导码,前7B为前同步码,后1B为帧定界符</p>
+<p>目的地址:6B<br>源地址:6B<br>类型:2B<br>数据:46-1500B<br>FCS:4B</p>
+<h3 id="PPP协议"><a href="#PPP协议" class="headerlink" title="PPP协议"></a>PPP协议</h3><ol>
+<li>链路控制协议LCP</li>
+<li>网络控制协议NCP</li>
+</ol>
+<p>异步传输时,使用字节填充法<br>同步传输时,使用零比特填充</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h3 id="网络层提供的服务"><a href="#网络层提供的服务" class="headerlink" title="网络层提供的服务"></a>网络层提供的服务</h3><ul>
+<li>面向连接的虚电路服务</li>
+<li>无连接的数据报服务</li>
+</ul>
+<h3 id="IP地址的划分"><a href="#IP地址的划分" class="headerlink" title="IP地址的划分"></a>IP地址的划分</h3><ol>
+<li>分类编址</li>
+<li>划分子网</li>
+<li>无分类编码</li>
+</ol>
+<h3 id="ICMP协议"><a href="#ICMP协议" class="headerlink" title="ICMP协议"></a>ICMP协议</h3><p>IP协议号： 1</p>
+<ul>
+<li>差错报告报文<ol>
+<li>终点不可达</li>
+<li>时间超过</li>
+<li>参数问题</li>
+</ol>
+</li>
+<li>询问报文<ul>
+<li>回送请求或回送回答</li>
+<li>时间戳请求和时间戳回答</li>
+</ul>
+</li>
+</ul>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p>网际层<br>每台主机都维护有自己的arp表,内含局域网内各主机的mac地址与ip地址的对应关系<br>$ip -&gt; mac$<br>arp高速缓存表</p>
+<p>动态类型:主机自动配置,默认生命周期5分钟<br>静态类型:管理员配置,一直存在</p>
+<p>报文:</p>
+<ul>
+<li>arp请求报文(广播)</li>
+<li>arp响应报文(单播)</li>
+</ul>
+<h3 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h3><p>基本首部:20B,扩展首部最大40B</p>
+<p>版本4bit<br>首部长度:4bit:以4B为单位<br>区分服务:1B<br>总长度:2B:以1B为单位<br>标识:2B<br>标志:3bit<br>片偏移:13bit: n&#x2F;8,以8B为单位<br>生存时间:1B<br>协议:1B<br>首部检验和:2B<br>源地址:4B<br>目的地址:4B</p>
+<p>标志:</p>
+<ol>
+<li>1bit保留位</li>
+<li>DF:确认是否分片,0不分片</li>
+<li>MF:该分片是否为最后一个,0表示是最后一个</li>
+</ol>
+<h3 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h3><p>8个基本字段</p>
+<p>基本首部:40B,无可变选项<br>版本:4bit<br>通信量类:1B<br>流标号:20bit<br>有效荷载长度:2B<br>下一个首部:1B<br>条数限制:1B(最大255跳)<br>源地址:128bit<br>目的地址:128bit</p>
+<p>扩展首部6种类型</p>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>发送方: 发送窗口(swnd) 拥塞窗口(cwnd)<br>接收方: 接受窗口(rwnd)</p>
+<p>拥塞控制的算法:</p>
+<ol>
+<li>慢开始:  慢开始门限ssthressh;指数级增加cwnd</li>
+<li>拥塞避免: 线性+1增大</li>
+<li>快重传</li>
+<li>快恢复</li>
+</ol>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="BGP-4"><a href="#BGP-4" class="headerlink" title="BGP-4"></a>BGP-4</h3><p>bgp -&gt; tcp -&gt; ip:17</p>
+<h3 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP:文件传输协议"></a>FTP:文件传输协议</h3><p>ftp -&gt; tcp -&gt; ip:17</p>
+<p>客户服务器模式</p>
+<p>命令通道(控制连接)：服务器端口号21:一直存在<br>数据通道(数据连接)：服务器端口号20:仅在传输数据时建立</p>
+<p>主动模式：建立数据通道时，FTP服务器主动连接客户端<br>被动模式：客户端通知服务器在指定端口建立数据通道,服务端port不一定是20,有服务器和客户端自行协商</p>
+<h3 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a>电子邮件</h3><ol>
+<li>用户代理(客户端)</li>
+<li>邮件服务器</li>
+<li>协议:<ol>
+<li>邮件发送协议:SMTP</li>
+<li>邮件读取协议:POP3;IMAP</li>
+</ol>
+</li>
+</ol>
+<h4 id="STMP"><a href="#STMP" class="headerlink" title="STMP"></a>STMP</h4><p>TCP端口:25</p>
+<p>STMP只能传输ASCII编码文本数据<br>发送时:多媒体数据(图片,音频等)需要通过MIME转换为ASCII<br>接受时:ASCII通过MIME转换为多媒体数据<br>MIME:多用途邮件扩展</p>
+<ol>
+<li>5个新的邮件首部</li>
+<li>邮件内容格式标准化</li>
+<li>定义传送编码</li>
+</ol>
+<h4 id="POP3-邮局协议"><a href="#POP3-邮局协议" class="headerlink" title="POP3:邮局协议"></a>POP3:邮局协议</h4><p>port:110<br>不能在邮件浏览器上管理自己的邮件<br>只能选择下载并删除邮件或者下载并保留邮件</p>
+<h4 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h4><p>TCPport:143<br>可以操纵邮件服务器里的邮件</p>
+]]></content>
+      <tags>
+        <tag>计算机基础</tag>
+        <tag>考研</tag>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设备工程</title>
+    <url>/2024/05/29/%E8%AE%BE%E5%A4%87%E5%B7%A5%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="流体"><a href="#流体" class="headerlink" title="流体"></a>流体</h3><p>流体流动过程中呈现出两种流态:层流和湍流</p>
+<p>水头损失</p>
+<h3 id="给水"><a href="#给水" class="headerlink" title="给水"></a>给水</h3><p>给水系统的分类:</p>
+<ul>
+<li>生活给水</li>
+<li>生产给水</li>
+<li>消防给水</li>
+</ul>
+<p>给水系统的组成:</p>
+<ul>
+<li>引入管</li>
+<li>水表节点</li>
+<li>室内给水管网</li>
+<li>给水附件</li>
+<li>升压储水设备</li>
+<li>消防设备</li>
+</ul>
+<p>给水额定流量:卫生器具配水出口在单位时间内流出的规定的水量</p>
+<p>流出水头:为保证积水配件的给水额定流量值,在其阀前所需的静水压</p>
+<p>最不利点:室内管网上水压力最低的配水点</p>
+<p>钢管，铸铁管，塑料管管材的特点</p>
+<p>钢管:</p>
+<ul>
+<li>焊接钢管和热镀锌钢管</li>
+<li>焊接钢管:消防管道和生产给水管道</li>
+<li>强度高,接口方便,承受压力大,内表面光滑,水力条件好</li>
+<li>耐腐蚀性差,造价较高</li>
+</ul>
+<p>铸铁管:</p>
+<ul>
+<li>高压铸铁管,普压铸铁管,低压铸铁管</li>
+<li>耐腐蚀,装接方便,寿命长,价格低</li>
+<li>性脆,密度大,长度短</li>
+<li>一般用于埋地管道</li>
+</ul>
+<p>塑料管:</p>
+<ul>
+<li>耐腐蚀,不受酸碱盐油类介质的侵蚀,质轻而坚,管壁光滑,水力性能好,容易切割,加工安装方便,可以制成各种颜色</li>
+<li>强度低,耐久性,耐热性能较差</li>
+<li>一般用于输送温度在45度以下的建筑物内外给水</li>
+</ul>
+<p>给水附件：</p>
+<ul>
+<li>止回阀:用于阻止水流的反向流动</li>
+<li>截止阀:用于关闭水源,调节流量</li>
+<li>蝶阀:用于调节和关断水流,体积小,启闭方便</li>
+<li>浮球阀:用于控制水位</li>
+<li>安全阀:防止管网或密闭用水设备压力过高</li>
+</ul>
+<p>水表的形式：</p>
+<ul>
+<li>旋翼式:翼轮转轴与水流方向垂直，阻力较大，宜用于小流量测试。</li>
+<li>螺翼式:翼轮转轴与水流方向平行，阻力较小，宜用于大流量测试。</li>
+</ul>
+<p><strong>水泵的基本参数</strong></p>
+<p>流量（Q）：单位时间内通过水泵的水的体积，单位常用m²&#x2F;h或L&#x2F;s。</p>
+<p>总扬程（H）：当水流过水泵时，水所获得的比能增值，单位常用mH20。</p>
+<p>轴功率（N）：水泵从电机处所获得的全部功率。单位常用kW。</p>
+<p><strong>水泵的选择</strong><br>选择水泵首先要确定水泵的流量和与此流量相对的扬程，然后合理选用水泵型号，使水泵在高效率区工作。</p>
+<p>水泵流量确定原则：水泵后无水箱等调节装置时，应按设计秒流量确定；否则，应按最大小时流量确定。调速泵在额定转速的工作点，应位于水泵高效区的末端</p>
+<p>水泵的扬程应满足最不利配水点或消火栓等所需的水压</p>
+<p><strong>给水方式</strong></p>
+<ul>
+<li>直接供水</li>
+</ul>
+<p>系统简单,投资,可充分利用外网水压.外网停水则室内断水</p>
+<p>水量水压在一天内均能满足用水要求的用水场所</p>
+<ul>
+<li>设置水箱的供水A</li>
+</ul>
+<p>水箱进水管和出水管共用一根立管供水可靠，系统简单，投资省，可充F分利用外网水压。缺点是水箱水用尽后，用水器具水压会受外网压力影响</p>
+<p>供水水压、水量周期性不足时采用</p>
+<ul>
+<li>设置水箱的供水B</li>
+</ul>
+<p>系统简单，投资省，可充分利用外网水压，但是水箱容易二次污染；水箱容积的确定要慎重</p>
+<p>室外给水管网供I水水压偏高或不稳定时采用。</p>
+<ul>
+<li>水泵和水箱联合工作的供水</li>
+</ul>
+<p>水泵能及时向水箱供水，可缩小水箱的容积。供水可靠，投资较大，安装和维修都比较复杂。</p>
+<p>室外给水管网水压低于或经常不能满足建筑内部给水管网所需水压，且室内用水不均匀时采用。</p>
+<ul>
+<li>设置水泵的供水A</li>
+</ul>
+<p>系统简单，供水可靠，无高位水箱，但耗能多</p>
+<p>水压经常不足，用水较均匀，且不允许直接从管网抽水时采用</p>
+<ul>
+<li>设置水泵的供水B</li>
+</ul>
+<p>系统简单，供水可靠，无高位水箱，但耗能较多。为了充分利用室外管网压力，节省电能，当水泵与室外管网直接连接时，应设旁通管。</p>
+<p>室外给水管网的水压经常不足时采用</p>
+<ul>
+<li>分区供水</li>
+</ul>
+<p>可以充分利用外网压力，供水安全，但投资较大，维护复杂。</p>
+<p>供水压力只能满足建筑下层供水要求时采用</p>
+<ul>
+<li>设置气压供水装置的供水</li>
+</ul>
+<p>供水可靠，无高位水箱，但水泵效率低、耗能多。用于不宜建造高位水箱的场所</p>
+<p>外网水压不能满足所需水压，用水不均匀，且不宜设水箱时采用</p>
+<p>给水管道布置与敷设的基本要求:</p>
+<ul>
+<li>最佳水力条件</li>
+<li>满足维修与美观要求</li>
+<li>保证生产与使用安全</li>
+<li>保证管道不受到破坏</li>
+</ul>
+<h3 id="消防给水"><a href="#消防给水" class="headerlink" title="消防给水"></a>消防给水</h3><p>建筑消防给水系统:消火栓给水系统和自动喷水灭火系统</p>
+<p>消防给水系统的组成:<br>引入管,水表,旁通管和阀门,消防水泵,竖管,干管,水箱,止回阀,消防栓设备,水泵接合器</p>
+<ul>
+<li>自动喷水的种类：<ul>
+<li>开式<ul>
+<li>雨淋</li>
+<li>水幕</li>
+<li>喷雾</li>
+</ul>
+</li>
+<li>闭式（）特点<ul>
+<li>湿式:温度在4-70度之间选择</li>
+<li>干式</li>
+<li>预作用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自动喷水灭火系统的报警装置：<ul>
+<li>水流指示器</li>
+<li>压力开关</li>
+<li>水流警铃</li>
+</ul>
+</li>
+</ul>
+<h3 id="建筑排水系统"><a href="#建筑排水系统" class="headerlink" title="建筑排水系统"></a>建筑排水系统</h3><p>通气管的作用:</p>
+<ol>
+<li>使排水系统内空气流通,压力稳定,防止水封破坏</li>
+<li>减轻金属管道内受废气的侵蚀,延长使用寿命</li>
+<li>提高排水系统的排水能力</li>
+</ol>
+<p>排水系统的种类:</p>
+<ul>
+<li>生活:工业废水:建筑雨水</li>
+<li>重力流:压力流:真空</li>
+<li>单立管:双立管:三立管</li>
+</ul>
+<p>排水系统的组成:</p>
+<ul>
+<li>卫生器具</li>
+<li>收水器</li>
+<li>排水管道</li>
+<li>清通设备</li>
+<li>通气系统</li>
+</ul>
+<h3 id="建筑采暖"><a href="#建筑采暖" class="headerlink" title="建筑采暖"></a>建筑采暖</h3><p>形式： 水平，垂直，重力（特点）<br>机械循环系统中水泵位置</p>
+<p>自然循环热水采暖系统:</p>
+<p>循环动力:散热器中心和锅炉中心之间的水柱密度差与柱高的乘积</p>
+<p>膨胀水箱的作用:</p>
+<ul>
+<li>容纳膨胀体积水</li>
+<li>排除系统空气</li>
+<li>作为系统的定压点,防止最高点汽化</li>
+<li>补充系统蒸发水量</li>
+</ul>
+<p>机械循环热水采暖系统:</p>
+<p>上供上回式系统:</p>
+<ul>
+<li>适用于:设置地沟困难,且不允许在地板上安装管道</li>
+<li>特点:底层散热器要装泄水阀</li>
+</ul>
+<p>下供下回排出空气式:</p>
+<ul>
+<li>适用:设有地下室的建筑物中,或平屋顶建筑棚下难以布置供水干管的场合</li>
+<li>特点<ol>
+<li>地下室布置供水干管,管路直接散热给地下室,无效热损失小</li>
+<li>在施工中,每安装好一层散热器即可开始供暖,给冬季施工带来方便</li>
+<li>排出系统中空气较为困难</li>
+</ol>
+</li>
+</ul>
+<p>下供上回倒流式:</p>
+<ol>
+<li>无需设置集气管等排气装置</li>
+<li>底层散热器面积小,便于布置</li>
+<li>当采用高温水供暖系统时,可减少布置高架水箱的困难</li>
+<li>散热器面积要比上供下回顺流式面积多</li>
+</ol>
+<p>水平式系统:</p>
+<ul>
+<li>总造价低</li>
+<li>管路简单,施工方便</li>
+<li>便于分层管理和调节</li>
+<li>不必在顶棚上专设安装膨胀水箱的房间</li>
+</ul>
+<p><strong>热风采暖</strong></p>
+<p>热风采暖的热源宜采用$0.1-0.3MPa$的高压蒸汽,或不低于$90 ^\circ C$的热水,也可以采用燃气,燃油,电加热</p>
+<p>热源:锅炉房,换热站,各种热泵机房</p>
+<p>热媒:</p>
+<ul>
+<li>利用蒸汽或热水通过金属壁传热而将空气加热</li>
+<li>利用燃气或燃油加热空气</li>
+<li>利用电能加热空气</li>
+</ul>
+<p>特点:</p>
+<ul>
+<li>热惰性小,升温快,室内温度分布均匀,温度梯度小,设备简单,投资省</li>
+<li>适用于耗热量大的高大空间建筑和间歇采暖的建筑</li>
+</ul>
+<p>按送风方式分类:</p>
+<ul>
+<li>集中送风</li>
+<li>风道送风</li>
+<li>暖风机送风</li>
+</ul>
+<p>按加热空气的来源不同分类:</p>
+<ul>
+<li>直流式</li>
+<li>再循环式</li>
+<li>混合式</li>
+</ul>
+<p>管网系统的特点，<br>同程式:</p>
+<ul>
+<li>各立管环路总长度都相等,环路压力损失容易平衡</li>
+</ul>
+<p>异程式:</p>
+<ul>
+<li>各立管环路总是不相等,各立管环路压力损失难以平衡,会出现严重的水平失调现象</li>
+</ul>
+<h3 id="通风"><a href="#通风" class="headerlink" title="通风"></a>通风</h3><p>自然通风依靠风压和热压作用使空气进行交换</p>
+<p>自然通风原则:</p>
+<ul>
+<li>建筑应该坐北朝南,将纵轴布置成东西向</li>
+<li>以自然通风为主的建筑进风面应与夏季主导风向成$60 ^\circ -90 ^\circ$,且不宜小于$45 ^\circ$</li>
+<li>采用自然通风的低矮建筑应与较高建筑物之间保持适当的比例关系</li>
+<li>以自然通风为主的热车间，为增大进风面积，应尽量采用单跨厂房。</li>
+<li>余热量较大的厂房应尽量采用单层建筑，不宜在其四周建筑毗屋；否则，宜建在夏季主导风向的迎风面</li>
+<li>如果车间内无高大障碍物阻挡，也不放散大量的粉尘和有害气体，且迎风面和背风面的开孔面积占外墙面积的25%以上时，尽可能采用“穿堂风”的通风方式</li>
+<li>对于多跨厂房，应将冷、热跨间隔布置，使冷跨位于热跨中间，冷跨天窗进风，热跨天窗排风</li>
+</ul>
+<p>车间内工艺设备的布置与自然通风:</p>
+<ul>
+<li>对于依靠热压作用的自然通风，当厂房设有天窗时，应将散热设备布置在天窗的下部</li>
+<li>在多层建筑厂房中，应将散热设备尽量放置在最高层</li>
+<li>温热源在室外布置时，应布置在夏季主导风向的下风侧；在室内设置时，应采取隔热措施，并应靠近厂房的某外墙侧，布置在进风孔口的两边</li>
+</ul>
+<p>建筑形式的选择:181</p>
+<h3 id="空调206"><a href="#空调206" class="headerlink" title="空调206"></a>空调206</h3><p>湿空气的密度为干空气和水蒸气的密度之和,是指单位体积内湿空气的质量\</p>
+<p>相对湿度:空气中水蒸气分压与同温度下饱和水蒸气分压力的比值</p>
+<p>含湿量:湿空气中与1kg干空气并存的水蒸气质量</p>
+<p>露点温度:空气结露与否的临界温度</p>
+<p>湿球温度:</p>
+<p>湿空气的比晗:含有1kg干空气的湿空气的晗</p>
+<p>压缩式制冷循环的部件</p>
+<ul>
+<li>冷凝器</li>
+<li>压缩机</li>
+<li>蒸发器</li>
+<li>膨胀阀</li>
+</ul>
+<p>压缩式制冷循环的过程:<br>压缩机排出的高温高压气体进入冷凝器,将热量传递给冷却水或空气而冷凝成液体.液体流经膨胀阀节流降压,成为低压气液混合物进入蒸发器,吸收冷冻水热量而全部汽化.然后,气体被吸进压缩机压缩,完成制冷循环</p>
+<h3 id="电力系统"><a href="#电力系统" class="headerlink" title="电力系统"></a>电力系统</h3><p>电力系统由发电厂、输配电网、变电站及电力用户组成的统一整体</p>
+<p>一般民用建筑的供电电压在20kV及以下，只有少数特大型民用建筑物（群）及用电负荷大的工业建筑供电电压在35~110kV之间</p>
+<p>电能质量指标包括电压、波形和频率的质量</p>
+<p>电力负荷根据对<font color="#f79646">供电可靠性的要求</font>及中断供电在对人身安全、经济损失上所造成的影响程度进行分级。</p>
+<h3 id="民用电器用房的布置"><a href="#民用电器用房的布置" class="headerlink" title="民用电器用房的布置"></a>民用电器用房的布置</h3><p>主要考虑的电气房间：</p>
+<ul>
+<li>强电主要站房及用房：<br>开闭所，变电站，柴油发电机房，高压电缆分界小室，低压电缆交接间，配电室，强电竖井</li>
+<li>弱电主要机房：<br>消防控制室（消防值班室、消防控制中心）安防控制中心、建筑设备监控室、计算机机房、电信机房、卫星接收及有线电视机房、有线广播及及（厅堂）扩声机房、电信间、弱电竖井等。</li>
+</ul>
+<p>电气井布置原则：</p>
+<ul>
+<li>多层和高层建筑内的电气竖井尺寸除应考虑敷设竖向电缆、封闭母线、穿线钢管和电线槽外，还应有配电箱、电度表箱、分线箱及接线箱等占用的空间及操作维护距离</li>
+<li>竖井的位置和数量应根据建筑规模、设备和管线数量、水平支线长度、建筑物的沉降缝和防火分区等因数确定</li>
+<li>强电竖井宜与弱电竖井分别设置。当受条件限制而合设竖井时，应将强电和弱电线路分别敷设在竖井的两侧或采取隔离措施</li>
+<li>竖井的大小除满足布线间隔及安装箱体或设备等必需的尺寸外，强电宜在箱体前留有不小于0.8m、弱电宜在箱体前留有不小于0.6m的操作、维护距离。当受条件限制，利用竖井外的公共走道作为检修面积时，强电井的净深尺寸不宜小于0.8m，弱电井的净深尺寸不宜小于0.4m。</li>
+<li>竖井的地坪或门槛宜高出地坪0.15~0.3m。</li>
+<li>竖井的进出线要方便；竖井应位于方便安装、维护的公共部位；且上下层宜对位</li>
+<li>选择坚井位置时应严密注意结构梁对电的敢竖向管线的不利影响</li>
+</ul>
+<h3 id="电气，电缆和电气设备"><a href="#电气，电缆和电气设备" class="headerlink" title="电气，电缆和电气设备"></a>电气，电缆和电气设备</h3><p>选择导线截面积的方法：</p>
+<ul>
+<li>按发热条件选择</li>
+<li>按允许电压损失选择</li>
+<li>按机械强度选择</li>
+</ul>
+<h3 id="配电线路的敷设"><a href="#配电线路的敷设" class="headerlink" title="配电线路的敷设"></a>配电线路的敷设</h3><p>电线布线的种类：</p>
+<ul>
+<li>直敷布线</li>
+<li>金属导管和金属槽盒布线</li>
+<li>可弯曲金属导管布线</li>
+<li>地面内暗装金属槽盒布线</li>
+<li>刚性塑料导管（槽）布线</li>
+</ul>
+<h3 id="照明系统"><a href="#照明系统" class="headerlink" title="照明系统"></a>照明系统</h3><p>显色性:光源对物体的显色能力</p>
+<p>物体在某光源照射下显现颜色与日光照射下显现颜色相符的程度称为某光源的显色指数</p>
+<p>光通量:光源在单位时间内通过某一面积的光的量,称为光通量.符号$\phi$,单位$lm(流明)$</p>
+<p>照度：单位面积上的光通量成为被照面的照度，符号$E$,单位$lx$(勒克斯)</p>
+<p>$E&#x3D;d\phi&#x2F;ds$</p>
+<p>$1lx&#x3D;1 \frac{lm}{m^2}$</p>
+<p>发光效率:</p>
+<p> 配光曲线是指光源向其四周辐射光强大小的曲线,</p>
+<p>灯具的保护角,指灯具开口边缘与发光体(灯丝)最远边缘的连线与水平线之间的夹角</p>
+<p>照明方式:</p>
+<ul>
+<li>一般照明</li>
+<li>局部照明</li>
+<li>混合照明</li>
+</ul>
+<p>照明种类:</p>
+<ul>
+<li>正常</li>
+<li>应急</li>
+<li>值班</li>
+<li>警卫</li>
+<li>障碍</li>
+</ul>
+<p>应急照明:</p>
+<ul>
+<li>疏散照明</li>
+<li>安全照明</li>
+<li>备用照明</li>
+</ul>
+<p>照明质量:</p>
+<ul>
+<li>合适的照度</li>
+<li>照明的均匀度</li>
+<li>合适的亮度分布</li>
+<li>适宜的光源颜色,色温,显色性</li>
+<li>照度的稳定性</li>
+<li>频闪效应的消除</li>
+</ul>
+<p>P</p>
+<p>例题:某办公室有吊顶(见图6-12),长19.2m, 宽12.8m, 净高2.6m,工作面高0.75m。顶棚、墙面和桌面反射比分别为0.7、0.5、0.1。采用直接照明时,照度为3001x。光源和灯具选用飞利浦的TLD36W&#x2F;840&#x2F;3350型和TES100-236-1C-E2型双管荧光灯照明吸顶安装。使用环境比较洁净,求吊顶上的装灯数量。</p>
+<p>![[Pasted image 20240606022658.png]]<br>![[Pasted image 20240531203939.png]]</p>
+<p>![[Pasted image 20240531203949.png]]</p>
+<h3 id="防雷与接地"><a href="#防雷与接地" class="headerlink" title="防雷与接地"></a>防雷与接地</h3><p>防雷原理：用接闪器引来雷电,还要安全地导流入地,所有接闪器都必须经过接地引下线与接地体 (接地装置)相连。</p>
+<p>建筑的防雷措施：</p>
+<ul>
+<li>一类防雷建筑<br>防直击雷、防雷电感应和防雷电波侵入、侧击雷</li>
+<li>二类防雷建筑<br>防直击雷、防雷电波侵入、有爆炸危险场所应有防闪电感应的措施、侧击雷</li>
+<li>三类防雷建筑<br>防直击雷和防雷电波侵入的措施、侧击雷</li>
+</ul>
+<p>接地装置：是埋入地下土壤中的金属导体,由接地线和接地体组成,其作用是把雷电流疏散到大地中去以限制防雷装置对地电压过高</p>
+<p>人工接地体：是利用圆钢、角钢、钢管、扁钢等制成一定形状并敷设在地下</p>
+<p>自然接地体：是利用建筑物的钢筋混凝土基础内的钢筋作为接地体</p>
+<h3 id="火灾报警与消防联动"><a href="#火灾报警与消防联动" class="headerlink" title="火灾报警与消防联动"></a>火灾报警与消防联动</h3><p>火灾自动报警系统一般由火灾触发器件、火灾警报装置、火灾报警控制器和消防控制室图形显示装置等组成。</p>
+<p>消防联动:</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>计算机二级公共基础知识</title>
+    <url>/2025/08/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="程序设计基础"><a href="#程序设计基础" class="headerlink" title="程序设计基础"></a>程序设计基础</h2><p>面向对象的编程的优点：<strong>易维护</strong>，<strong>易扩展</strong>，<strong>模块化</strong>，<strong>方便建模</strong></p>
+<h2 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h2><p>软件生命周期：</p>
+<ul>
+<li>需求分析</li>
+<li>概要设计</li>
+<li>详细设计</li>
+<li>编码</li>
+<li>测试</li>
+<li>维护</li>
+</ul>
+<p>软件过程：</p>
+<ul>
+<li>瀑布模型</li>
+<li>快速复原模型（敏捷开发？）</li>
+<li>增量模型</li>
+<li>螺旋模型</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>读书笔记的做法</title>
+    <url>/2023/11/13/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E7%9A%84%E5%81%9A%E6%B3%95/</url>
+    <content><![CDATA[<p>#读书笔记</p>
+<p>读书笔记分为两部分,第一部分是对书的了解,第二部分是自己的感悟,不同的部分有不同的要求</p>
+<p>对于书的理解:</p>
+<ul>
+<li>这本书的主题是什么?</li>
+<li>这部书是如何讲其所涉及的主题的?</li>
+<li>这部书的大纲或骨架如何?<br>自己的感悟:</li>
+<li>你认为作者如何</li>
+<li>你认为书中那一部分更有意思,哪一部分是有道理的,哪一部分是错</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>软件工程</title>
+    <url>/2025/08/12/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>钢笔的选择</title>
+    <url>/2024/02/29/%E9%92%A2%E7%AC%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
+    <content><![CDATA[<h3 id="笔尖的分类"><a href="#笔尖的分类" class="headerlink" title="笔尖的分类"></a>笔尖的分类</h3><p>在网上购买钢笔时,通常要选择笔尖的型号.商家提供的选择中,有的用数字来表示型号,还有的用字母.用数字的和中性笔笔芯的型号类似挺好理解的,但英文表示的意思就不太明确了</p>
+<p>钢笔的笔尖和中性笔笔芯是类似的,可以根据出墨量的多少分成不同级别.<br>出墨量从小到大可以分为:</p>
+<ul>
+<li>EF笔尖(extra fine)</li>
+<li>F笔尖(fine)</li>
+<li>M笔尖(medium)</li>
+<li>B笔尖(broad)</li>
+</ul>
+<p>EF笔尖出墨量少,笔画细,有点像是0.38mm的中性笔<br>F笔尖次之,和0.5mm的中性笔有点像<br>M笔尖适合用于签名与收藏</p>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>钢笔</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机网络 | XianZhe</title><meta name="author" content="Xian Zhe"><meta name="copyright" content="Xian Zhe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章计算机网络的功能:  数据通信 资源共享 分布式处理 提高可靠性 负载均衡  网络分类广域网(WAN):交换技术城域网(MAN):以太网技术局域网(LAN):广播技术个人局域网(PAN) 局域网广播式网络,广域网点对点网络 交换技术 电路交换 报文交换:将一段完整的信息封装成组 分组交换:将完整信息分解为更小的块  性能计算:带宽:(bit&#x2F;s)时延:  发送时延: 分组长度&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="http://example.com/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="XianZhe">
+<meta property="og:description" content="第一章计算机网络的功能:  数据通信 资源共享 分布式处理 提高可靠性 负载均衡  网络分类广域网(WAN):交换技术城域网(MAN):以太网技术局域网(LAN):广播技术个人局域网(PAN) 局域网广播式网络,广域网点对点网络 交换技术 电路交换 报文交换:将一段完整的信息封装成组 分组交换:将完整信息分解为更小的块  性能计算:带宽:(bit&#x2F;s)时延:  发送时延: 分组长度&amp;#x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/icon.png">
+<meta property="article:published_time" content="2024-08-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-21T11:47:06.788Z">
+<meta property="article:author" content="Xian Zhe">
+<meta property="article:tag" content="计算机基础">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计算机网络",
+  "url": "http://example.com/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/",
+  "image": "http://example.com/images/icon.png",
+  "datePublished": "2024-08-20T00:00:00.000Z",
+  "dateModified": "2025-08-21T11:47:06.788Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Xian Zhe",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/images/favicon.png"><link rel="canonical" href="http://example.com/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":-1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/images/CG75d-L.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/icon.png" onerror="this.onerror=null;this.src='/images/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/CG78c-L.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">XianZhe</span></a><a class="nav-page-title" href="/"><span class="site-name">计算机网络</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-20T00:00:00.000Z" title="发表于 2024-08-20 08:00:00">2024-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-21T11:47:06.788Z" title="更新于 2025-08-21 19:47:06">2025-08-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>计算机网络的功能:</p>
+<ul>
+<li>数据通信</li>
+<li>资源共享</li>
+<li>分布式处理</li>
+<li>提高可靠性</li>
+<li>负载均衡</li>
+</ul>
+<h4 id="网络分类"><a href="#网络分类" class="headerlink" title="网络分类"></a>网络分类</h4><p>广域网(WAN):交换技术<br>城域网(MAN):以太网技术<br>局域网(LAN):广播技术<br>个人局域网(PAN)</p>
+<p>局域网广播式网络,广域网点对点网络</p>
+<h4 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h4><ul>
+<li>电路交换</li>
+<li>报文交换:将一段完整的信息封装成组</li>
+<li>分组交换:将完整信息分解为更小的块</li>
+</ul>
+<h4 id="性能计算"><a href="#性能计算" class="headerlink" title="性能计算:"></a>性能计算:</h4><p>带宽:(bit&#x2F;s)<br>时延:</p>
+<ul>
+<li>发送时延: 分组长度&#x2F;信道宽度</li>
+<li>传播时延: 信道长度&#x2F;电磁波在信道上的速率</li>
+<li>处理时延: </li>
+<li>排队时延<br>时延带宽积: $传播时延*信道宽度$<br>往返时间(RTT)<br>吞吐量<br>速率:bps,bit&#x2F;s,kb&#x2F;s,k&#x3D;$10^3$ , $M&#x3D; 10^6$<br>信道利用率: 有数据传输的时间&#x2F;总时间</li>
+</ul>
+<p>协议由语法,语义,同步三部分组成</p>
+<h4 id="服务的类型"><a href="#服务的类型" class="headerlink" title="服务的类型"></a>服务的类型</h4><ul>
+<li>面向连接和无连接</li>
+<li>可靠与不可靠</li>
+<li>有应答与无应答</li>
+</ul>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><h3 id="以太网MAC帧"><a href="#以太网MAC帧" class="headerlink" title="以太网MAC帧"></a>以太网MAC帧</h3><p>帧前有8字节前导码,前7B为前同步码,后1B为帧定界符</p>
+<p>目的地址:6B<br>源地址:6B<br>类型:2B<br>数据:46-1500B<br>FCS:4B</p>
+<h3 id="PPP协议"><a href="#PPP协议" class="headerlink" title="PPP协议"></a>PPP协议</h3><ol>
+<li>链路控制协议LCP</li>
+<li>网络控制协议NCP</li>
+</ol>
+<p>异步传输时,使用字节填充法<br>同步传输时,使用零比特填充</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h3 id="网络层提供的服务"><a href="#网络层提供的服务" class="headerlink" title="网络层提供的服务"></a>网络层提供的服务</h3><ul>
+<li>面向连接的虚电路服务</li>
+<li>无连接的数据报服务</li>
+</ul>
+<h3 id="IP地址的划分"><a href="#IP地址的划分" class="headerlink" title="IP地址的划分"></a>IP地址的划分</h3><ol>
+<li>分类编址</li>
+<li>划分子网</li>
+<li>无分类编码</li>
+</ol>
+<h3 id="ICMP协议"><a href="#ICMP协议" class="headerlink" title="ICMP协议"></a>ICMP协议</h3><p>IP协议号： 1</p>
+<ul>
+<li>差错报告报文<ol>
+<li>终点不可达</li>
+<li>时间超过</li>
+<li>参数问题</li>
+</ol>
+</li>
+<li>询问报文<ul>
+<li>回送请求或回送回答</li>
+<li>时间戳请求和时间戳回答</li>
+</ul>
+</li>
+</ul>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p>网际层<br>每台主机都维护有自己的arp表,内含局域网内各主机的mac地址与ip地址的对应关系<br>$ip -&gt; mac$<br>arp高速缓存表</p>
+<p>动态类型:主机自动配置,默认生命周期5分钟<br>静态类型:管理员配置,一直存在</p>
+<p>报文:</p>
+<ul>
+<li>arp请求报文(广播)</li>
+<li>arp响应报文(单播)</li>
+</ul>
+<h3 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h3><p>基本首部:20B,扩展首部最大40B</p>
+<p>版本4bit<br>首部长度:4bit:以4B为单位<br>区分服务:1B<br>总长度:2B:以1B为单位<br>标识:2B<br>标志:3bit<br>片偏移:13bit: n&#x2F;8,以8B为单位<br>生存时间:1B<br>协议:1B<br>首部检验和:2B<br>源地址:4B<br>目的地址:4B</p>
+<p>标志:</p>
+<ol>
+<li>1bit保留位</li>
+<li>DF:确认是否分片,0不分片</li>
+<li>MF:该分片是否为最后一个,0表示是最后一个</li>
+</ol>
+<h3 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h3><p>8个基本字段</p>
+<p>基本首部:40B,无可变选项<br>版本:4bit<br>通信量类:1B<br>流标号:20bit<br>有效荷载长度:2B<br>下一个首部:1B<br>条数限制:1B(最大255跳)<br>源地址:128bit<br>目的地址:128bit</p>
+<p>扩展首部6种类型</p>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>发送方: 发送窗口(swnd) 拥塞窗口(cwnd)<br>接收方: 接受窗口(rwnd)</p>
+<p>拥塞控制的算法:</p>
+<ol>
+<li>慢开始:  慢开始门限ssthressh;指数级增加cwnd</li>
+<li>拥塞避免: 线性+1增大</li>
+<li>快重传</li>
+<li>快恢复</li>
+</ol>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="BGP-4"><a href="#BGP-4" class="headerlink" title="BGP-4"></a>BGP-4</h3><p>bgp -&gt; tcp -&gt; ip:17</p>
+<h3 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP:文件传输协议"></a>FTP:文件传输协议</h3><p>ftp -&gt; tcp -&gt; ip:17</p>
+<p>客户服务器模式</p>
+<p>命令通道(控制连接)：服务器端口号21:一直存在<br>数据通道(数据连接)：服务器端口号20:仅在传输数据时建立</p>
+<p>主动模式：建立数据通道时，FTP服务器主动连接客户端<br>被动模式：客户端通知服务器在指定端口建立数据通道,服务端port不一定是20,有服务器和客户端自行协商</p>
+<h3 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a>电子邮件</h3><ol>
+<li>用户代理(客户端)</li>
+<li>邮件服务器</li>
+<li>协议:<ol>
+<li>邮件发送协议:SMTP</li>
+<li>邮件读取协议:POP3;IMAP</li>
+</ol>
+</li>
+</ol>
+<h4 id="STMP"><a href="#STMP" class="headerlink" title="STMP"></a>STMP</h4><p>TCP端口:25</p>
+<p>STMP只能传输ASCII编码文本数据<br>发送时:多媒体数据(图片,音频等)需要通过MIME转换为ASCII<br>接受时:ASCII通过MIME转换为多媒体数据<br>MIME:多用途邮件扩展</p>
+<ol>
+<li>5个新的邮件首部</li>
+<li>邮件内容格式标准化</li>
+<li>定义传送编码</li>
+</ol>
+<h4 id="POP3-邮局协议"><a href="#POP3-邮局协议" class="headerlink" title="POP3:邮局协议"></a>POP3:邮局协议</h4><p>port:110<br>不能在邮件浏览器上管理自己的邮件<br>只能选择下载并删除邮件或者下载并保留邮件</p>
+<h4 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h4><p>TCPport:143<br>可以操纵邮件服务器里的邮件</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Xian Zhe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">http://example.com/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">XianZhe</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a><a class="post-meta__tags" href="/tags/%E8%80%83%E7%A0%94/">考研</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/icon.png" onerror="this.onerror=null;this.src='/images/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Xian Zhe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:751137945@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="toc-number">1.0.1.</span> <span class="toc-text">网络分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="toc-number">1.0.2.</span> <span class="toc-text">交换技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97"><span class="toc-number">1.0.3.</span> <span class="toc-text">性能计算:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.0.4.</span> <span class="toc-text">服务的类型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-number">2.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">3.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91MAC%E5%B8%A7"><span class="toc-number">3.1.</span> <span class="toc-text">以太网MAC帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PPP%E5%8D%8F%E8%AE%AE"><span class="toc-number">3.2.</span> <span class="toc-text">PPP协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">4.</span> <span class="toc-text">网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-number">4.1.</span> <span class="toc-text">网络层提供的服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%92%E5%88%86"><span class="toc-number">4.2.</span> <span class="toc-text">IP地址的划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ICMP%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.3.</span> <span class="toc-text">ICMP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP%E5%8D%8F%E8%AE%AE"><span class="toc-number">4.4.</span> <span class="toc-text">ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPV4"><span class="toc-number">4.5.</span> <span class="toc-text">IPV4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPV6"><span class="toc-number">4.6.</span> <span class="toc-text">IPV6</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">5.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">5.1.</span> <span class="toc-text">TCP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">6.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BGP-4"><span class="toc-number">6.1.</span> <span class="toc-text">BGP-4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP-%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="toc-number">6.2.</span> <span class="toc-text">FTP:文件传输协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="toc-number">6.3.</span> <span class="toc-text">电子邮件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#STMP"><span class="toc-number">6.3.1.</span> <span class="toc-text">STMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#POP3-%E9%82%AE%E5%B1%80%E5%8D%8F%E8%AE%AE"><span class="toc-number">6.3.2.</span> <span class="toc-text">POP3:邮局协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IMAP"><span class="toc-number">6.3.3.</span> <span class="toc-text">IMAP</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/24/%E7%A6%8F%E6%A0%BC%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%9E%8B/" title="福格行为模型">福格行为模型</a><time datetime="2025-08-23T16:00:00.000Z" title="发表于 2025-08-24 00:00:00">2025-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BA%8C%E7%BA%A7%E5%85%AC%E5%85%B1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="计算机二级公共基础知识">计算机二级公共基础知识</a><time datetime="2025-08-19T00:00:00.000Z" title="发表于 2025-08-19 08:00:00">2025-08-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/12/%E8%81%8C%E6%B5%8B/" title="职测">职测</a><time datetime="2025-08-12T00:00:00.000Z" title="发表于 2025-08-12 08:00:00">2025-08-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/12/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" title="软件工程">软件工程</a><time datetime="2025-08-12T00:00:00.000Z" title="发表于 2025-08-12 08:00:00">2025-08-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/03/%E5%81%A5%E5%BA%B7/" title="健康">健康</a><time datetime="2025-08-03T00:00:00.000Z" title="发表于 2025-08-03 08:00:00">2025-08-03</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By Xian Zhe</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
