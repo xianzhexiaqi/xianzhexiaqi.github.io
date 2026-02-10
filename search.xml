@@ -81,15 +81,16 @@
     <url>/2025/08/24/%E7%A6%8F%E6%A0%BC%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>福格行为模型:</p>
 <ul>
-<li>作者: B.J.福格</li>
+<li>作者:B.J.福格</li>
 <li>出版社: 天津科学技术出版社</li>
-<li>出版时间: 2021年10月</li>
-<li>ISDN: 9787557696672</li>
+<li>出版时间:2021年10月</li>
 <li>阅读方式: 电子书</li>
 </ul>
-<p>在书中, 作者提出了 $行动&#x3D;动机+能力+提示$ 的模型, 认为如果要改变自己或他人的行为, 就要从这三方面入手.<br>该书一共分为八章, 第一章为总述, 二三四章分别从三方面进行细讲, 六七讲的是在实践过程中的一些小技巧和注意事项, 第八章则从自己过渡到群体, 讲对群体的行为设计</p>
+<p>在书中, 作者提出了 $行动&#x3D;动机+能力+提示$ 的模型, 认为如果要改变自己或他人的行为, 就要从这三方面入手.<br>该书一共分为八章, 第一章为总述, 二三四章分别从三方面进行细讲, 六七讲的是在实践过程中的一些小技巧和注意事项, 第八章则从自己过渡到群体, 讲对群体的行为设计 </p>
 <h2 id="文章内容"><a href="#文章内容" class="headerlink" title="文章内容"></a>文章内容</h2><h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>第一章开篇使用作者在健身房收到红十字捐款信息的例子引出的行为的三要素. 然后分为四部分来进行叙述.</p>
-<h4 id="三要素齐备，行为才能发生"><a href="#三要素齐备，行为才能发生" class="headerlink" title="三要素齐备，行为才能发生"></a>三要素齐备，行为才能发生</h4><p>在这部分作者想要说明:</p>
+<h4 id="三要素齐备，行为才能发生"><a href="#三要素齐备，行为才能发生" class="headerlink" title="三要素齐备，行为才能发生"></a>三要素齐备，行为才能发生</h4><ul>
+<li>在这部分作者想要说明:</li>
+</ul>
 <ol>
 <li>行为的表现可能不同, 但底层机制都是相同的, 以此说明模型的普适性</li>
 <li>动机越强，行为就越有可能做到</li>
@@ -726,5 +727,534 @@
 <h3 id="火灾报警与消防联动"><a href="#火灾报警与消防联动" class="headerlink" title="火灾报警与消防联动"></a>火灾报警与消防联动</h3><p>火灾自动报警系统一般由火灾触发器件、火灾警报装置、火灾报警控制器和消防控制室图形显示装置等组成。</p>
 <p>消防联动:</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>我的butterfly美化记录</title>
+    <url>/2025/08/28/%E6%88%91%E7%9A%84butterfly%E7%BE%8E%E5%8C%96%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 hexo 的 butterly 主题一段时间之后愈发感觉只依靠 <code>_config.butterfly.yml</code> 来进行设置已经满足不了我了, 因此有必要求助于自定义的 css 和 js 了<br>为了使用自定义的文件, 我们首先要在 <code>source</code> 文件夹中建立 css 和 js 的文件夹, 然后创建文件 <code>custom.css </code> 和 <code>custom.js</code> ,然后在 <code>_config.butterfly.yml</code> 中引用这两个文件.<br>进行如下配置:</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">     <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/custom.css&quot;</span> <span class="string">media=&quot;defer&quot;</span> <span class="string">onload=&quot;this.media=&#x27;all&#x27;&quot;&gt;</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/custom.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="页脚透明化"><a href="#页脚透明化" class="headerlink" title="页脚透明化"></a>页脚透明化</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#footer</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>wallpaper的粒子系统</title>
+    <url>/2024/05/05/wallpaper%E7%9A%84%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="粒子系统简介"><a href="#粒子系统简介" class="headerlink" title="粒子系统简介"></a>粒子系统简介</h1><p>Wallpaper Engine 具有粒子系统编辑器，可让您创建复杂甚至交互式的粒子系统，并根据自己的喜好对其进行微调。</p>
+<p>粒子系统由大量小图像组成，用于构建某些效果，如火、雨或移动物体，如落叶。您可以控制在精灵上渲染的图像、它们的创建方式以及它们的移动方式。您甚至可以使用鼠标与它们进行交互，并且还可以使它们具有音频响应功能。</p>
+<p>Wallpaper Engine 允许您在编辑器中现有粒子系统的基础上进行构建，或者从头开始全新的粒子系统。在本文档中，我们将解释粒子系统是如何构建的，以及粒子系统由哪些组件组成，我们将通过几个示例来说明这一点。</p>
+<h2 id="粒子系统组件"><a href="#粒子系统组件" class="headerlink" title="粒子系统组件"></a>粒子系统组件</h2><p>每个粒子系统都由不同的组件组成，这些组件控制墙纸的某些特征。特别是如果您刚刚开始使用粒子系统，那么在配置粒子系统时打开文档可能会很有意义，以便您知道每个设置的作用。</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>General</td>
+<td>定义粒子在屏幕上的渲染方式、使用的纹理以及生成的粒子数量。</td>
+</tr>
+<tr>
+<td>Renderers</td>
+<td>让我们为粒子定义特殊的渲染器。例如，您可以选择一个特殊的渲染器，该渲染器会根据粒子的速度拉伸粒子。</td>
+</tr>
+<tr>
+<td>Emitters</td>
+<td>定义创建新粒子的时间和方式。</td>
+</tr>
+<tr>
+<td>Initializers</td>
+<td>在创建粒子时定义粒子的属性，例如它们的大小、速度和颜色。</td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>运算符对粒子的属性随时间变化应用更改。使用 Initializer 值作为起点。</td>
+</tr>
+<tr>
+<td>Child Particle Systems</td>
+<td>子粒子系统是完全独立的粒子系统，它们附加到当前粒子系统。您可以在不同的时间生成它们。可选的</td>
+</tr>
+<tr>
+<td>Control Points</td>
+<td>控制点是粒子系统或壁纸中可以与之交互的特殊点，包括鼠标光标。可选的</td>
+</tr>
+</tbody></table>
+<h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><p>粒子系统的“常规”组件定义了粒子在屏幕上的渲染方式以及使用的纹理。<br>它由三个部分组成：</p>
+<ul>
+<li>材质设置<ul>
+<li>折射</li>
+<li>纹理</li>
+<li>着色器设置</li>
+<li>渲染设置</li>
+</ul>
+</li>
+<li>系统设置<ul>
+<li>最大计数</li>
+<li>开始时间</li>
+<li>世界空间</li>
+<li>透视渲染</li>
+<li>Sprite sheet - 动画模式</li>
+<li>Sprite sheet - 无帧混合</li>
+<li>Sprite sheet - 序列乘法器</li>
+</ul>
+</li>
+<li>视口设置<ul>
+<li>显示统计数据</li>
+<li>显示轴线</li>
+<li>颜色</li>
+</ul>
+</li>
+</ul>
+<h3 id="材质设置"><a href="#材质设置" class="headerlink" title="材质设置"></a>材质设置</h3><h4 id="折射"><a href="#折射" class="headerlink" title="折射"></a>折射</h4><p>启用后，您可以添加一个额外的法线贴图，Wallpaper Engine 使用该贴图为粒子添加折射效果。</p>
+<p>该折射粒子保持在原位，并使用Particle Operator Size Change和Particle Operator Alpha Fade进行动画处理。使用白色图像作为反照率纹理，将材质设置为半透明混合。</p>
+<h4 id="纹理"><a href="#纹理" class="headerlink" title="纹理"></a>纹理</h4><p> <strong>反照率纹理</strong>是该粒子系统使用的主要纹理。除此之外,还可以导入sprite sheet以创建动画纹理或生成具有单个纹理的粒子。如果您想了解更多关于如何在粒子系统中使用sprite sheet的信息，请务必阅读我们的<a href="https://docs.wallpaperengine.io/en/scene/particles/tutorial/spritesheet.html">粒子系统sprite sheet教程</a>。<br><strong>法线贴图纹理</strong>是可选的纹理贴图.此纹理仅在启用“折射”选项时可见。您可以在此处导入 Wallpaper Engine 将用于折射效果的法线贴图</p>
+<h4 id="着色器设置"><a href="#着色器设置" class="headerlink" title="着色器设置"></a>着色器设置</h4><p><strong>超亮(Overbright)</strong>:允许您调整粒子系统的亮度。如果您打算提高亮度，请尝试在壁纸上启用“绽放效果”，尤其是 HDR 绽放可以比增加“过亮”值获得更高质量的结果。<br><strong>折射量(Refract Amount)</strong>:可选,此选项仅在启用“折射”选项时可见,用于控制折射效应的强度。</p>
+<h4 id="渲染设置"><a href="#渲染设置" class="headerlink" title="渲染设置"></a>渲染设置</h4><p><strong>混合(Blending)</strong>: 根据粒子系统包含的内容类型，选择正确的混合模式非常重要。您可以在“<strong>Additive</strong>”、“<strong>Translucent</strong>”和“<strong>Normal</strong>”混合之间进行选择。</p>
+<h3 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h3><h4 id="最大计数"><a href="#最大计数" class="headerlink" title="最大计数"></a>最大计数</h4><p>控制允许生成的最大粒子数。这直接控制粒子分配了多少内存。始终将此值设置为粒子系统运行所需的低值，这可以大大提高性能并减少内存使用。</p>
+<h4 id="开始时间"><a href="#开始时间" class="headerlink" title="开始时间"></a>开始时间</h4><p>将在创建粒子系统时预先模拟粒子系统一段时间。这有助于避免屏幕看起来是空的，它会启动系统，就好像它已经运行了配置的时间一样。这个数字越高，模拟所需的时间就越长，因为它是基于实时模拟的。</p>
+<h4 id="世界空间"><a href="#世界空间" class="headerlink" title="世界空间"></a>世界空间</h4><p>如果启用此功能，粒子在创建后将忽略粒子系统的位置、比例和旋转。如果您想将粒子系统附加到另一个对象，这可能很有用,生成的粒子不会与创建它们的对象一起拖动。</p>
+<h4 id="透视渲染"><a href="#透视渲染" class="headerlink" title="透视渲染"></a>透视渲染</h4><p>透视渲染与 3D 环境相关。对于基于 3D 的壁纸，此选项始终处于打开状态。在 2D 场景中，如果您正在处理 3D 模型，您可以选择将其打开。</p>
+<h4 id="Sprite-sheet-动画模式"><a href="#Sprite-sheet-动画模式" class="headerlink" title="Sprite sheet - 动画模式"></a>Sprite sheet - 动画模式</h4><p>更改此模式会生成Sprite sheet的随机帧，或者按顺序播放Sprite sheet。</p>
+<h4 id="Sprite-工作表-无帧混合"><a href="#Sprite-工作表-无帧混合" class="headerlink" title="Sprite 工作表 - 无帧混合"></a>Sprite 工作表 - 无帧混合</h4><p>禁用帧之间的平滑混合。</p>
+<h4 id="Sprite-工作表-序列乘法器"><a href="#Sprite-工作表-序列乘法器" class="headerlink" title="Sprite 工作表 - 序列乘法器"></a>Sprite 工作表 - 序列乘法器</h4><p>这决定了播放精灵表序列的速度。</p>
+<h3 id="视口设置"><a href="#视口设置" class="headerlink" title="视口设置"></a>视口设置</h3><p><strong>视口设置仅与您在粒子系统编辑器中看到的预览屏幕相关。</strong></p>
+<h4 id="显示统计数据"><a href="#显示统计数据" class="headerlink" title="显示统计数据"></a>显示统计数据</h4><p>显示右上角的粒子数。用于确定粒子系统“系统设置”中“最大计数”设置的上限。</p>
+<h4 id="显示轴"><a href="#显示轴" class="headerlink" title="显示轴"></a>显示轴</h4><p>在预览屏幕中渲染水平线和垂直线，以帮助您浏览粒子预览。</p>
+<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><p>允许您更改预览屏幕的颜色，以在不同的背景上测试粒子。</p>
+<h2 id="Renderers"><a href="#Renderers" class="headerlink" title="Renderers"></a>Renderers</h2><p>粒子系统至少需要一个渲染器才能运行。有四种不同类型的渲染器可用：</p>
+<ol>
+<li>Sprite 渲染器</li>
+<li>Sprite Trail 渲染器</li>
+<li>Rope 渲染器</li>
+<li>Rope Trail 渲染器</li>
+</ol>
+<p>每个渲染器都迎合了特定的用例。</p>
+<h3 id="Sprite-渲染器"><a href="#Sprite-渲染器" class="headerlink" title="Sprite 渲染器"></a>Sprite 渲染器</h3><p>这是在大多数情况下相关的默认渲染器。它会以以配置的方向将粒子渲染到屏幕上</p>
+<h3 id="Sprite-Trail-渲染器"><a href="#Sprite-Trail-渲染器" class="headerlink" title="Sprite Trail 渲染器"></a>Sprite Trail 渲染器</h3><p>此渲染器将根据粒子的速度拉伸粒子。<br>**长度Length:**：长度乘以速度，决定了粒子的理想长度。<br><strong>最大长度Max Length</strong>：粒子在非常高的速度下可以达到的最大长度。</p>
+<h3 id="Rope-渲染器"><a href="#Rope-渲染器" class="headerlink" title="Rope 渲染器"></a>Rope 渲染器</h3><p>此渲染器在生成的每个粒子之间绘制一条线。<br>细分：每行中的细分数。数字越大，弯道越平滑，但会牺牲系统性能</p>
+<h3 id="Rope-Trail-渲染器"><a href="#Rope-Trail-渲染器" class="headerlink" title="Rope Trail 渲染器"></a>Rope Trail 渲染器</h3><p>此渲染器沿每个粒子的路径绘制一条线。它相对昂贵，但允许您沿着粒子绘制平滑线条，这在复杂的运动场景中可能很有用</p>
+<h2 id="Emitters-发射器"><a href="#Emitters-发射器" class="headerlink" title="Emitters(发射器)"></a>Emitters(发射器)</h2><p>粒子系统的发射器决定了产生新粒子的方式。粒子系统至少需要一个发射器才能运行。</p>
+<p>有两种类型的发射器：</p>
+<ul>
+<li>盒子随机：在粒子系统原点周围的矩形中生成粒子。</li>
+<li>球体随机：在粒子系统原点周围的圆形球体中生成粒子。</li>
+</ul>
+<p>虽然不同的发射器类型提供某些独特的设置，但绝大多数发射器设置在所有发射器类型之间共享。</p>
+<h3 id="偏移量-offset"><a href="#偏移量-offset" class="headerlink" title="偏移量(offset)"></a>偏移量(offset)</h3><p>定义粒子生成的每个方向相对于粒子系统位置的偏移量。</p>
+<h3 id="Directions-方向"><a href="#Directions-方向" class="headerlink" title="Directions 方向"></a>Directions 方向</h3><p>定义粒子在粒子系统原点周围生成的方向。值 表示 <code>1</code> 可以进一步配置的 <code>Distance Max</code> 值<br>设置为 <code>Y</code> <code>2</code> 表示发射器的高度是最大距离的两倍。将其设置为 <code>0</code> 意味着发射器没有高度，所有粒子都在一条直线水平线上生成。同样的逻辑也适用于 <code>X</code> 水平值和 <code>Z</code> 深度值（在 3D 壁纸中）。</p>
+<h3 id="Sign（球体随机发射器）"><a href="#Sign（球体随机发射器）" class="headerlink" title="Sign（球体随机发射器）"></a>Sign（球体随机发射器）</h3><p>此设置允许您强制为给定轴的粒子的生成位置的正值或负值。有效值为：</p>
+<ul>
+<li><code>0</code> ：默认值，正值和负值均可。</li>
+<li><code>1</code> ：只能使用正值。</li>
+<li><code>-1</code> ：只能使用负值。</li>
+</ul>
+<p>例如：通过设置为 <code>X</code> <code>-1</code> ，所有 <code>X</code> 值都将为负数，这意味着粒子将仅在粒子系统的左侧生成。请参阅左上角具有不同 X&#x2F;Y 组合的以下可视化效果：</p>
+<h3 id="Distance-Min-最小距离"><a href="#Distance-Min-最小距离" class="headerlink" title="Distance Min(最小距离)"></a>Distance Min(最小距离)</h3><p>粒子从粒子系统中心生成的最小距离</p>
+<h3 id="Distance-Max"><a href="#Distance-Max" class="headerlink" title="Distance Max"></a>Distance Max</h3><p>粒子从粒子系统中心生成的最大距离。您可以通过调整上述 <code>Directions</code> 选项中的乘数来进一步调整此值。</p>
+<h3 id="Control-point-控制点"><a href="#Control-point-控制点" class="headerlink" title="Control point(控制点)"></a>Control point(控制点)</h3><p>允许您将发射器位置连接到控制点。有关详细信息，请参阅控制点部分。</p>
+<h3 id="Rate"><a href="#Rate" class="headerlink" title="Rate"></a>Rate</h3><p>每秒生成的粒子数。粒子的最大数量在粒子系统的“系统”设置中定义。</p>
+<h3 id="Duration"><a href="#Duration" class="headerlink" title="Duration"></a>Duration</h3><p>发射器的寿命（以秒为单位）。默认值表示 <code>0</code> 发射器永远不会消失。值 为 表示 <code>10</code> 发射器将在 10 秒后停止发射新粒子，但现有粒子将继续存在，直到它们根据其设置消失。</p>
+<p>只能通过 SceneScript 重新启动整个粒子系统来重新启动发射器。如果需要，您可以通过 SceneScript 调用粒子系统上的 <code>stop()</code> and <code>play()</code> 函数来满足您的自定义需求。</p>
+<p>在壁纸引擎编辑器中，粒子系统将始终无限期可见，您只能在应用和预览壁纸时将其可视化</p>
+<h3 id="Instantaneous"><a href="#Instantaneous" class="headerlink" title="Instantaneous"></a>Instantaneous</h3><p>创建粒子系统时立即创建的粒子数。根据粒子系统的配置，将生成更多的粒子。请记住粒子的总体最大数量，您可以在粒子系统的系统设置中进行配置。</p>
+<h3 id="Limit-to-one-per-frame"><a href="#Limit-to-one-per-frame" class="headerlink" title="Limit to one per frame"></a>Limit to one per frame</h3><p>启用后，发射器每帧仅生成一个粒子。这意味着用户配置的 FPS 限制可能会对粒子数量产生影响。</p>
+<h3 id="Speed-Max"><a href="#Speed-Max" class="headerlink" title="Speed Max"></a>Speed Max</h3><p>与移动算子(<strong>Operator</strong>)结合使用的最大粒子速度</p>
+<h3 id="Audio-response-音频响应"><a href="#Audio-response-音频响应" class="headerlink" title="Audio response(音频响应)"></a>Audio response(音频响应)</h3><p>设置为 <code>Center</code> 意味着粒子系统将同时对左右音频通道进行音频响应。发射器仅在播放音频时处于活动状态。</p>
+<h3 id="Bounds-边界"><a href="#Bounds-边界" class="headerlink" title="Bounds(边界)"></a>Bounds(边界)</h3><p>边界控制音频响应的开始和停止点。如果音频边界配置为 0 和 1，则音频效果将缓慢淡出。通过使边界更窄，可以实现更突然的效果。例如，如果将音频边界设置为 0.8 和 1，则音频响应能力将仅对介于 0.8 和 1 之间的音量级别生效，这会使音频效果更加突然，并将其限制在音量级别的上限范围内。</p>
+<h3 id="Frequency-max"><a href="#Frequency-max" class="headerlink" title="Frequency max"></a>Frequency max</h3><p>效果响应的最高音频频率。这些值从 0 到 15，其中 0 是低音，15 是高频高音。例如，如果您希望发射器仅对正在播放的音乐的节拍做出反应，请将其设置为 1（因为节拍通常由较低的低音频率反射）。</p>
+<h3 id="Frequency-min"><a href="#Frequency-min" class="headerlink" title="Frequency min"></a>Frequency min</h3><p>效果响应的最低音频频率。这些值从 0 到 15，其中 0 是低音，15 是高频高音。例如，如果您希望发射器仅对正在播放的音乐的节拍做出反应，请将其设置为 0（因为节拍通常由较低的低音频率反射）。</p>
+]]></content>
+      <categories>
+        <category>wallpaper</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2024/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>计算机网络的功能:</p>
+<ul>
+<li>数据通信</li>
+<li>资源共享</li>
+<li>分布式处理</li>
+<li>提高可靠性</li>
+<li>负载均衡</li>
+</ul>
+<h4 id="网络分类"><a href="#网络分类" class="headerlink" title="网络分类"></a>网络分类</h4><p>广域网(WAN):交换技术<br>城域网(MAN):以太网技术<br>局域网(LAN):广播技术<br>个人局域网(PAN)</p>
+<p>局域网广播式网络,广域网点对点网络</p>
+<h4 id="交换技术"><a href="#交换技术" class="headerlink" title="交换技术"></a>交换技术</h4><ul>
+<li>电路交换</li>
+<li>报文交换:将一段完整的信息封装成组</li>
+<li>分组交换:将完整信息分解为更小的块</li>
+</ul>
+<h4 id="性能计算"><a href="#性能计算" class="headerlink" title="性能计算:"></a>性能计算:</h4><p>带宽:(bit&#x2F;s)<br>时延:</p>
+<ul>
+<li>发送时延: 分组长度&#x2F;信道宽度</li>
+<li>传播时延: 信道长度&#x2F;电磁波在信道上的速率</li>
+<li>处理时延: </li>
+<li>排队时延<br>时延带宽积: $传播时延*信道宽度$<br>往返时间(RTT)<br>吞吐量<br>速率:bps,bit&#x2F;s,kb&#x2F;s,k&#x3D;$10^3$ , $M&#x3D; 10^6$<br>信道利用率: 有数据传输的时间&#x2F;总时间</li>
+</ul>
+<p>协议由语法,语义,同步三部分组成</p>
+<h4 id="服务的类型"><a href="#服务的类型" class="headerlink" title="服务的类型"></a>服务的类型</h4><ul>
+<li>面向连接和无连接</li>
+<li>可靠与不可靠</li>
+<li>有应答与无应答</li>
+</ul>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><h3 id="编码与调制"><a href="#编码与调制" class="headerlink" title="编码与调制"></a>编码与调制</h3><p>当信息通过电流的形式传输时为数字信号. 当信息在物理世界中以非电流的形式进行传输时成为模拟信号. 为了实现信号在不同形式之间的通信, 我们需要对信息进行编码.<br>编码: 数字信号–&gt; 数字信号<br>调制: 数字信号–&gt; 模拟信号</p>
+<p>编码方式:</p>
+<ul>
+<li>双极性不归零编码</li>
+<li>双极性归零编码</li>
+<li>曼彻斯特编码: 中间跳变用于同步也用于传输数据</li>
+<li>差分曼彻斯特编码: 中间跳变用于时钟同步; 开头跳变为 1, 无跳变为 0</li>
+</ul>
+<p>调制方式:</p>
+<ul>
+<li>基本调制方法:<ul>
+<li>调频</li>
+<li>调幅</li>
+<li>调相</li>
+</ul>
+</li>
+<li>混合调制方法:<ul>
+<li>QAM-16</li>
+</ul>
+</li>
+</ul>
+<h3 id="信道容量"><a href="#信道容量" class="headerlink" title="信道容量"></a>信道容量</h3><h4 id="奈氏准则-奈奎斯特"><a href="#奈氏准则-奈奎斯特" class="headerlink" title="奈氏准则(奈奎斯特)"></a>奈氏准则(奈奎斯特)</h4><p>设带宽为 $W$  </p>
+<h4 id="香农定理"><a href="#香农定理" class="headerlink" title="香农定理"></a>香农定理</h4><h3 id="信道复用技术"><a href="#信道复用技术" class="headerlink" title="信道复用技术"></a>信道复用技术</h3><ul>
+<li>频分复用 FDM：Frequency Division Multiplexing</li>
+<li>时分复用 TDM：Time Division Multiplexing</li>
+<li>波分复用 WDM: Wavelength Division Multiplexing</li>
+<li>码分复用 CDM: Code Division Multiplexing</li>
+</ul>
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><p>数据链路层是协议中的第二层，位于物理层之上，负责的是物理链路的节点与节点之间的传输工作,<br>帧 (Frame) 是数据链路层上的协议数据单元 (PDU)</p>
+<p>数据链路层的问题：</p>
+<ul>
+<li>封装成帧<ul>
+<li>将上层的数据包添加首尾封装成帧</li>
+<li>帧定界</li>
+<li>最大传输单元 (MTU)</li>
+</ul>
+</li>
+<li>透明传输: 数据链路层对上层交付的数据单位 PDU 没有任何限制，就像数据链路层不存在一样<ul>
+<li>转义字符：解决上层数据中存在与帧定界符相同的字节序列时无法准确定位结尾的问题</li>
+<li>面向字节的物理链路使用<strong>字节填充</strong>的方法实现透明传输</li>
+<li>面向比特的物理链路使用<strong>比特填充</strong>的方法实现透明传输</li>
+</ul>
+</li>
+<li>差错检测<ul>
+<li>奇偶校验</li>
+<li>循环冗余校验</li>
+</ul>
+</li>
+<li>可靠传输: 发送方发送什么，接收方就能收到什么</li>
+</ul>
+<h3 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h3><ul>
+<li>比特在传输过程中会出现比特差错，又称误码</li>
+<li>一段时间内, 错误比特数占总比特数的比率为误码率 (BER)</li>
+<li>提高信噪比可以降低误码率</li>
+<li>帧尾部有用于检测数据是否出现误码的字段叫帧检验序列(FCS)</li>
+</ul>
+<p>传输差错：</p>
+<ul>
+<li><p>误码</p>
+</li>
+<li><p>分组丢失</p>
+</li>
+<li><p>分组失序</p>
+</li>
+<li><p>分组重复</p>
+</li>
+<li><p>奇偶校验</p>
+</li>
+<li><p>循环冗余检验CRC</p>
+<ul>
+<li>双方约定一个生成多项式 $G(x)$</li>
+<li>发送方基于待发送的数据和 $G(x)$ 计算差错检测码即冗余码，将冗余码添加到数据尾部发送</li>
+<li>接收方使用 $G(x)$ 来验算是否产生误码</li>
+</ul>
+</li>
+</ul>
+<h3 id="可靠传输"><a href="#可靠传输" class="headerlink" title="可靠传输"></a>可靠传输</h3><p>除了数据链路层以外, 上层对可靠传输均有要求</p>
+<p>实现机制：</p>
+<ul>
+<li>停止-等待协议 (stop-and-wait, SW)</li>
+<li>回退N帧协议 (go-back-N, GBN)</li>
+<li>选择重传协议 (selective repeat, SR)</li>
+</ul>
+<h4 id="停止-等待协议"><a href="#停止-等待协议" class="headerlink" title="停止-等待协议"></a>停止-等待协议</h4><h4 id="回退N帧协议"><a href="#回退N帧协议" class="headerlink" title="回退N帧协议"></a>回退N帧协议</h4><ul>
+<li>流水线式传输</li>
+<li>使用n比特对分组编号</li>
+<li>滑动窗口<ul>
+<li>发送方的发送窗口为 $2^n-1$</li>
+<li>接收方的接收窗口为 1</li>
+</ul>
+</li>
+<li>连续ARQ协议</li>
+<li>又称滑动窗口协议</li>
+</ul>
+<h4 id="选择重传协议"><a href="#选择重传协议" class="headerlink" title="选择重传协议"></a>选择重传协议</h4><ul>
+<li>使用n比特对分组编号</li>
+<li>滑动窗口<ul>
+<li>发送方的发送窗口为 $W_{R}$</li>
+<li>接收方的接收窗口为 $W_{T}$</li>
+</ul>
+</li>
+<li>$W_{T} geq W_{R} &gt;1$</li>
+<li>$2^ngeq W_{T} +W_{R}$</li>
+</ul>
+<p>常见协议：</p>
+<ul>
+<li>以太网</li>
+<li>PPP 协议</li>
+<li>802.11无线局域网</li>
+</ul>
+<h3 id="点对点协议（PPP）"><a href="#点对点协议（PPP）" class="headerlink" title="点对点协议（PPP）"></a>点对点协议（PPP）</h3><p>![[Pasted image 20260106173533.png]]</p>
+<ol>
+<li>链路控制协议LCP</li>
+<li>网络控制协议NCP</li>
+</ol>
+<p>向上层提供不可靠传输</p>
+<h4 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h4><p>异步传输时,使用字节填充法<br>同步传输时,使用零比特填充</p>
+<h4 id="差错检测-1"><a href="#差错检测-1" class="headerlink" title="差错检测"></a>差错检测</h4><p>CRC检验</p>
+<h4 id="PPP的工作状态"><a href="#PPP的工作状态" class="headerlink" title="PPP的工作状态"></a>PPP的工作状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">stateDiagram-v2</span><br><span class="line">    direction LR</span><br><span class="line">    静止 --&gt; 建立: 检测到载波并建立物理层连接</span><br><span class="line">    建立 --&gt; 鉴别: LCP配置协商成功</span><br><span class="line">    建立 --&gt; 静止: LCP配置协商失败</span><br><span class="line">    鉴别 --&gt; 网络: 鉴别成功</span><br><span class="line">    鉴别 --&gt; 终止: 鉴别失败</span><br><span class="line">    网络 --&gt; 打开: NCP配置</span><br><span class="line">    打开 --&gt; 终止: 终止请求|出现故障</span><br><span class="line">    终止 --&gt; 静止: 载波停止</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>静止</li>
+<li>建立</li>
+<li>鉴别</li>
+<li>网络</li>
+<li>终止</li>
+<li>打开</li>
+</ol>
+<h3 id="以太网协议"><a href="#以太网协议" class="headerlink" title="以太网协议"></a>以太网协议</h3><ul>
+<li>网络适配器 (adapter), 简称网卡, 用于将计算机连接到网络, 如以太网, wifi网</li>
+<li>每个网卡都有唯一的数据链路层地址 (MAC地址), 又称硬件地址, 物理地址</li>
+<li>(Medium Access Control, MAC)</li>
+</ul>
+<h4 id="共享式以太网"><a href="#共享式以太网" class="headerlink" title="共享式以太网"></a>共享式以太网</h4><h5 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA&#x2F;CD协议"></a>CSMA&#x2F;CD协议</h5><p>用于以太网早期的共享总线式结构. 在该结构下, 任何帧都会沿总线传播到其他各站点. 需要协调总线上各站点争用总线<br>争用型媒体接入控制协议</p>
+<ul>
+<li>(CS, carrier Sense): 载波监听: 发送帧前检 测其他站点是否在发送帧</li>
+<li>(MA, Mutilpe Access): 多址接入: 多站点连接在一条总线上</li>
+<li>(CD, Collision D etection): 碰撞检测: 正在发送帧的站点边发送边检测碰撞</li>
+</ul>
+<p><strong>载波监听</strong></p>
+<ul>
+<li>检测到总线空闲 96 比特时间可发送帧</li>
+<li>检测到总线忙就放弃发送直到检测到 96bit的空闲</li>
+</ul>
+<p><strong>碰撞检测</strong></p>
+<ul>
+<li>站点在发送帧时边发送边检测碰撞</li>
+<li>检测到碰撞之后退避一段随机时间, 然后检测总线是否空闲</li>
+</ul>
+<p><strong>争用期</strong></p>
+<p>10 Mb&#x2F;s共享总线以太网规定: 争用期$2tau$的值为$512bit$的发送时间, 即 $51.2mu s$</p>
+<p><strong>退避算法</strong></p>
+<p>使用时机：当站点在发送帧时检测碰撞发生，就停止发送，退避一段 <strong>随机时间</strong>后重新监听信道空闲</p>
+<p>当重传16 次仍未成功时，可以视为无法成功发送，放弃重传</p>
+<p>截断二进制指数退避算法: $退避时间&#x3D;2 tau*r$<br>$2tau :争用期$<br>$r: random(range(0,(2^k-1))),k&#x3D;min(重传次数，10)$</p>
+<p><strong>信道利用率</strong></p>
+<p>极限信道利用率: $S_{max}&#x3D;frac{T_{0}}{1+frac{tau}{T_{0}}}&#x3D;frac{T_{0}}{T_{0}+tau}$<br>$T_{0}:$ 发送一个帧需要的时间<br>$tau:$ 端到端单程传播时延</p>
+<h4 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h4><ul>
+<li>集线器hub工作在物理层</li>
+<li>网桥bridge工作在数据链路层</li>
+<li>网桥具有自己的帧转发表</li>
+<li>网桥收到帧之后检查mac地址，根据结果转发帧</li>
+</ul>
+<p><strong>生成树协议STP</strong></p>
+<p>10BASE-T星型以太网标准: 802.3i<br>10:10 Mb&#x2F;s<br>BASE:基带信号传输<br>T: 双绞线<br>每个站点到集线器的距离不超过 100m</p>
+<h4 id="交换式以太网"><a href="#交换式以太网" class="headerlink" title="交换式以太网"></a>交换式以太网</h4><p><strong>交换式集线器</strong>，实际上是具有多个接口的网桥，称为以太网交换机或二层交换机<br>网桥可以隔离碰撞域</p>
+<h4 id="以太网V2MAC帧"><a href="#以太网V2MAC帧" class="headerlink" title="以太网V2MAC帧"></a>以太网V2MAC帧</h4><p> ![[Pasted image 20260108160222.png]]<br>在物理层，帧前有8字节前导码,前7B为前同步码,后1B为帧定界符<br>目的地址:6B<br>源地址:6B<br>类型:2B<br>数据:46-1500B<br>FCS:4B</p>
+<h4 id="虚拟局域网VLAN"><a href="#虚拟局域网VLAN" class="headerlink" title="虚拟局域网VLAN"></a>虚拟局域网VLAN</h4><p>要求：交换机支持检测和处理802.1Q帧<br>![[Pasted image 20260108160327.png]]</p>
+<h3 id="802-11无线局域网"><a href="#802-11无线局域网" class="headerlink" title="802.11无线局域网"></a>802.11无线局域网</h3><p>有固定基础设施的wifi：</p>
+<ul>
+<li>接入点AP</li>
+<li>基本服务器BSS</li>
+<li>分配系统DS</li>
+<li>扩展的服务集ESS</li>
+</ul>
+<p>无固定基础设施的wifi：热点<br>自组织网络:ad hoc network</p>
+<h4 id="CSMA-CA协议"><a href="#CSMA-CA协议" class="headerlink" title="CSMA&#x2F;CA协议"></a>CSMA&#x2F;CA协议</h4><ul>
+<li><p>(CS, carrier Sense): 载波监听: 发送帧前检 测其他站点是否在发送帧</p>
+</li>
+<li><p>(MA, Mutilpe Access): 多址接入: 多站点连接在一条总线上</p>
+</li>
+<li><p>(CA, Collision Detection): 碰撞避免: </p>
+</li>
+<li><p>DIFS:DCF帧间间隔，长度为$128mu s$</p>
+</li>
+<li><p>SIFS:短帧间间隔，长度为$28mu s$</p>
+<ul>
+<li>ACK帧，CTS帧，RTS帧</li>
+</ul>
+</li>
+<li><p>RTS帧：短控制帧，包括源&#x2F;目的地址以及通信持续时间，用于对信道进行预约</p>
+</li>
+<li><p>CTS帧：短响应控制帧</p>
+</li>
+</ul>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><ul>
+<li>ip</li>
+<li>icmp</li>
+<li>igmp</li>
+<li>arp</li>
+<li>rarp</li>
+</ul>
+<p>路由器根据路由选择协议生成路由表，根据路由表生成转发表</p>
+<h3 id="网络层提供的服务"><a href="#网络层提供的服务" class="headerlink" title="网络层提供的服务"></a>网络层提供的服务</h3><ul>
+<li>面向连接的虚电路服务<ul>
+<li>可靠通信由网络自身保证</li>
+<li>先建立虚电路连接通道，然后使用连接通信</li>
+</ul>
+</li>
+<li>无连接的数据报服务<ul>
+<li>可靠通信依靠用户主机</li>
+<li>分组转发，不需要建立连接通道</li>
+</ul>
+</li>
+</ul>
+<h3 id="IP-网际协议"><a href="#IP-网际协议" class="headerlink" title="IP(网际协议)"></a>IP(网际协议)</h3><p>不可靠传输服务</p>
+<h4 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;IP 数据报首部 (IPv4)&quot;</span><br><span class="line">---</span><br><span class="line">packet-beta</span><br><span class="line">0-3: &quot;版本 (Version)&quot;</span><br><span class="line">4-7: &quot;首部长度 (IHL)&quot;</span><br><span class="line">8-15: &quot;区分服务 (DS)&quot;</span><br><span class="line">16-31: &quot;总长度 (Total Length)&quot;</span><br><span class="line">32-47: &quot;标识 (Identification)&quot;</span><br><span class="line">48-50: &quot;标志 (Flags)&quot;</span><br><span class="line">51-63: &quot;片偏移 (Fragment Offset)&quot;</span><br><span class="line">64-71: &quot;生存时间 (TTL)&quot;</span><br><span class="line">72-79: &quot;协议 (Protocol)&quot;</span><br><span class="line">80-95: &quot;首部校验和 (Header Checksum)&quot;</span><br><span class="line">96-127: &quot;源 IP 地址&quot;</span><br><span class="line">128-159: &quot;目的 IP 地址&quot;</span><br><span class="line">160-191: &quot;选项 (Options, 可变)&quot;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>基本首部:20B,扩展首部最大40B<br>片偏移字段以8B为单位<br>标志:</p>
+<ol>
+<li>1bit保留位,固定为0</li>
+<li>DF:确认是否分片,0允许分片</li>
+<li>MF(最低位):该分片是否为最后一个,0表示是最后一个</li>
+</ol>
+<h5 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h5><ol>
+<li>分类编址:1981</li>
+<li>划分子网:1985</li>
+<li>无分类编址(CIDR):又称无分类域间路由选择，1993(正在使用)</li>
+</ol>
+<p><strong>分类编址：</strong></p>
+<p>网络号:主机号<br>主机号全0网络地址，主机号全1广播地址<br>将地址分为A B C D E五类<br>ABC为单播地址</p>
+<p><strong>划分子网:</strong></p>
+<p>子网掩码<br>网络号-子网号-主机号</p>
+<p><strong>无分类编址(CIDR)</strong></p>
+<p>$IP地址::&#x3D;{网络前缀,主机号}$<br>地址掩码，又称子网掩码<br>CIDR编址又称构造超网<br>路由聚合</p>
+<h4 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;IP 数据报首部 (IPv6)&quot;</span><br><span class="line">---</span><br><span class="line">packet-beta</span><br><span class="line">0-3: &quot;版本 (Version)&quot;</span><br><span class="line">4-12: &quot;通信量类&quot;</span><br><span class="line">13-31: &quot;流标号&quot;</span><br><span class="line">32-47: &quot;有效荷载长度&quot;</span><br><span class="line">48-50: &quot;下一个首部&quot;</span><br><span class="line">51-63: &quot;跳数限制&quot;</span><br><span class="line">64-71: &quot;生存时间 (TTL)&quot;</span><br><span class="line">72-79: &quot;协议 (Protocol)&quot;</span><br><span class="line">80-95: &quot;首部校验和 (Header Checksum)&quot;</span><br><span class="line">96-127: &quot;源 IP 地址&quot;</span><br><span class="line">128-159: &quot;目的 IP 地址&quot;</span><br><span class="line">160-191: &quot;选项 (Options, 可变)&quot;</span><br></pre></td></tr></table></figure>
+<p>8个基本字段</p>
+<p>基本首部:40B,无可变选项<br>版本:4bit<br>通信量类:1B<br>流标号:20bit<br>有效荷载长度:2B<br>下一个首部:1B<br>条数限制:1B(最大255跳)<br>源地址:128bit<br>目的地址:128bit</p>
+<p>扩展首部6种类型</p>
+<p>地址表示中:左侧零省略,连续零压缩(只能用一次)</p>
+<h4 id="路由选择协议"><a href="#路由选择协议" class="headerlink" title="路由选择协议"></a>路由选择协议</h4><ul>
+<li>内部网关协议(IGP)<ul>
+<li>路由信息协议(RIP)</li>
+<li>开放最短路径优先(OSPF)</li>
+</ul>
+</li>
+<li>外部网关协议(EGP)<ul>
+<li>边界网关协议(BGP)</li>
+</ul>
+</li>
+</ul>
+<h5 id="路由信息协议-RIP"><a href="#路由信息协议-RIP" class="headerlink" title="路由信息协议(RIP)"></a>路由信息协议(RIP)</h5><p>距离向量协议<br>使用UDP协议进行封装</p>
+<h5 id="开放最短路径优先-OSPF"><a href="#开放最短路径优先-OSPF" class="headerlink" title="开放最短路径优先(OSPF)"></a>开放最短路径优先(OSPF)</h5><ul>
+<li>链路状态:<ul>
+<li>与本路由器相连的其他路由器</li>
+<li>相连路由器之间的代价</li>
+</ul>
+</li>
+<li>邻居表</li>
+<li>链路状态通告LSA</li>
+<li>链路状态数据库</li>
+<li>分组<ul>
+<li>问候分组:用来建立和维护邻居关系,发送周期为10s</li>
+<li>数据库描述</li>
+<li>链路状态请求</li>
+<li>链路状态更新</li>
+<li>链路状态确认</li>
+</ul>
+</li>
+</ul>
+<h5 id="BGP"><a href="#BGP" class="headerlink" title="BGP"></a>BGP</h5><p>AS:自治系统</p>
+<p>处于应用层,使用TCP封装,端口号179</p>
+<p>BGP-4</p>
+<ul>
+<li>打开报文</li>
+<li>保活报文</li>
+<li>更新报文</li>
+<li>通知报文</li>
+</ul>
+<h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><h3 id="NAT网络地址转换"><a href="#NAT网络地址转换" class="headerlink" title="NAT网络地址转换"></a>NAT网络地址转换</h3><h3 id="ICMP协议"><a href="#ICMP协议" class="headerlink" title="ICMP协议"></a>ICMP协议</h3><p>IP协议号： 1</p>
+<ul>
+<li>差错报告报文<ol>
+<li>终点不可达</li>
+<li>时间超过(超时)</li>
+<li>参数问题</li>
+<li>源点抑制</li>
+<li>改变路由(重定向)</li>
+</ol>
+</li>
+<li>询问报文<ul>
+<li>回送请求或回送回答</li>
+<li>时间戳请求和时间戳回答</li>
+</ul>
+</li>
+</ul>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p>网际层<br>每台主机都维护有自己的arp表,内含局域网内各主机的mac地址与ip地址的对应关系<br>$ip -&gt; mac$<br>arp高速缓存表</p>
+<p>动态类型:主机自动配置,默认生命周期5分钟<br>静态类型:管理员配置,一直存在</p>
+<p>报文:</p>
+<ul>
+<li>arp请求报文(广播)</li>
+<li>arp响应报文(单播)</li>
+</ul>
+<h3 id="IP多播"><a href="#IP多播" class="headerlink" title="IP多播"></a>IP多播</h3><h4 id="IGMP协议"><a href="#IGMP协议" class="headerlink" title="IGMP协议"></a>IGMP协议</h4><h4 id="多播路由选择协议"><a href="#多播路由选择协议" class="headerlink" title="多播路由选择协议"></a>多播路由选择协议</h4><ul>
+<li>基于源树的多播路由选择<ul>
+<li>反向路径广播RPB算法</li>
+</ul>
+</li>
+<li>组共享树多播路由选择<ul>
+<li>基于核心的分布式生成树算法</li>
+</ul>
+</li>
+</ul>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;UDP Packet&quot;</span><br><span class="line">---</span><br><span class="line">packet-beta</span><br><span class="line">0-15: &quot;Source Port&quot;</span><br><span class="line">16-31: &quot;Destination Port&quot;</span><br><span class="line">32-47: &quot;Length&quot;</span><br><span class="line">48-63: &quot;Checksum&quot;</span><br><span class="line">64-95: &quot;Data (variable length)&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="TCP-传输控制协议"><a href="#TCP-传输控制协议" class="headerlink" title="TCP(传输控制协议)"></a>TCP(传输控制协议)</h3><h4 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;TCP Packet&quot;</span><br><span class="line">---</span><br><span class="line">packet-beta</span><br><span class="line">0-15: &quot;Source Port&quot;</span><br><span class="line">16-31: &quot;Destination Port&quot;</span><br><span class="line">32-63: &quot;Sequence Number&quot;</span><br><span class="line">64-95: &quot;Acknowledgment Number&quot;</span><br><span class="line">96-99: &quot;Data Offset&quot;</span><br><span class="line">100-105: &quot;Reserved&quot;</span><br><span class="line">106: &quot;URG&quot;</span><br><span class="line">107: &quot;ACK&quot;</span><br><span class="line">108: &quot;PSH&quot;</span><br><span class="line">109: &quot;RST&quot;</span><br><span class="line">110: &quot;SYN&quot;</span><br><span class="line">111: &quot;FIN&quot;</span><br><span class="line">112-127: &quot;Window&quot;</span><br><span class="line">128-143: &quot;Checksum&quot;</span><br><span class="line">144-159: &quot;Urgent Pointer&quot;</span><br><span class="line">160-191: &quot;(Options and Padding)(max:40B)&quot;</span><br><span class="line">192-255: &quot;Data (variable length)&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="连接管理-三次握手-四次挥手"><a href="#连接管理-三次握手-四次挥手" class="headerlink" title="连接管理(三次握手 四次挥手)"></a>连接管理(三次握手 四次挥手)</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant C as Client</span><br><span class="line">    participant S as Server</span><br><span class="line">    Note over S: 状态: LISTEN&lt;br/&gt;(监听)</span><br><span class="line">    </span><br><span class="line">    Note over C,S: 三次握手 (建立连接) </span><br><span class="line">    C-&gt;&gt;S: (SYN=1,seq=x)</span><br><span class="line">    Note over C: 状态: SYN_SENT&lt;br/&gt;(同步已发送)</span><br><span class="line">    S-&gt;&gt;C: (SYN=1,ACK=1,seq=y, ack=x+1)</span><br><span class="line">    Note over S:状态: SYN_RCVD&lt;br/&gt;(同步已接收)</span><br><span class="line">    C-&gt;&gt;S: (ACK=1,seq=x+1,ack=y+1)</span><br><span class="line">    Note over C,S: 状态: ESTABLISHED&lt;br/&gt;（连接建立，可传输数据）</span><br><span class="line">    Note over C,S: 传输数据中</span><br><span class="line">    </span><br><span class="line">    Note over C,S:四次挥手 (断开连接)</span><br><span class="line">    C-&gt;&gt;S: (FIN=1,ACK=1,seq=u,ack=v)</span><br><span class="line">    Note over C: 状态: FIN-WAIT-1</span><br><span class="line">    S-&gt;&gt;C: (ACK=1,seq=v,ack=u+1)</span><br><span class="line">    Note over C:状态: FIN-WAIT-2</span><br><span class="line">    Note over S:状态: CLOSE_WAIT </span><br><span class="line">    S-&gt;&gt;C: (FIN=1,ACK=1,seq=w,ack=u+1)</span><br><span class="line">    Note over S: 状态: LAST_ACK</span><br><span class="line">    C-&gt;&gt;S: (ACK=1,seq=u+1,ack=w+1)</span><br><span class="line">    Note over C:状态: TIME_WAIT</span><br><span class="line">    Note over C: 等待 2MSL 后关闭&lt;br/&gt;（MSL:最长报文段寿命）</span><br><span class="line">    Note over S: 收到 ACK 后立即关闭&lt;br/&gt;状态: CLOSED</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h4><p>发送方: 发送窗口(swnd) 拥塞窗口(cwnd)<br>接收方: 接受窗口(rwnd)</p>
+<h4 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h4><p>拥塞控制的算法:</p>
+<ol>
+<li>慢开始:  慢开始门限ssthressh;指数级增加cwnd</li>
+<li>拥塞避免: 线性+1增大</li>
+<li>快重传</li>
+<li>快恢复</li>
+</ol>
+<h4 id="可靠传输-1"><a href="#可靠传输-1" class="headerlink" title="可靠传输"></a>可靠传输</h4><h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><h3 id="BGP-4"><a href="#BGP-4" class="headerlink" title="BGP-4"></a>BGP-4</h3><p>bgp -&gt; tcp -&gt; ip:17</p>
+<h3 id="FTP-文件传输协议"><a href="#FTP-文件传输协议" class="headerlink" title="FTP:文件传输协议"></a>FTP:文件传输协议</h3><p>ftp -&gt; tcp -&gt; ip:17</p>
+<p>客户服务器模式</p>
+<p>命令通道(控制连接)：服务器端口号21:一直存在<br>数据通道(数据连接)：服务器端口号20:仅在传输数据时建立</p>
+<p>主动模式：建立数据通道时，FTP服务器主动连接客户端<br>被动模式：客户端通知服务器在指定端口建立数据通道,服务端port不一定是20,有服务器和客户端自行协商</p>
+<h3 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a>电子邮件</h3><ol>
+<li>用户代理(客户端)</li>
+<li>邮件服务器</li>
+<li>协议:<ol>
+<li>邮件发送协议:SMTP</li>
+<li>邮件读取协议:POP3;IMAP</li>
+</ol>
+</li>
+</ol>
+<h4 id="STMP"><a href="#STMP" class="headerlink" title="STMP"></a>STMP</h4><p>TCP端口:25</p>
+<p>STMP只能传输ASCII编码文本数据<br>发送时:多媒体数据(图片,音频等)需要通过MIME转换为ASCII<br>接受时:ASCII通过MIME转换为多媒体数据<br>MIME:多用途邮件扩展</p>
+<ol>
+<li>5个新的邮件首部</li>
+<li>邮件内容格式标准化</li>
+<li>定义传送编码</li>
+</ol>
+<h4 id="POP3-邮局协议"><a href="#POP3-邮局协议" class="headerlink" title="POP3:邮局协议"></a>POP3:邮局协议</h4><p>port:110<br>不能在邮件浏览器上管理自己的邮件<br>只能选择下载并删除邮件或者下载并保留邮件</p>
+<h4 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h4><p>TCPport:143<br>可以操纵邮件服务器里的邮件</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>计算机基础</tag>
+        <tag>考研</tag>
+        <tag>计算机网络</tag>
+      </tags>
   </entry>
 </search>
